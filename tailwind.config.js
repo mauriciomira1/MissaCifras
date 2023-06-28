@@ -29,15 +29,22 @@ module.exports = {
     },
 
     fontFamily: {
-      'sans': ['Quicksand', 'sans-serif'],
+      'sans': ['Quicksand', 'Roboto', 'Barlow', 'sans-serif'],
       'body': ['Quicksand'],
       extend: {
         fontFamily: {
           quicksand: ['var(--font-quicksand)'],
           roboto: ['var(--font-roboto)'],
+          barlow: ['var(--font-barlow)'],
         },
       }
     },
-    plugins: [],
+
+    extend: {
+      fontFamily: {
+        'quicksand': ['Quicksand', 'sans-serif'],
+        'barlow': ['Barlow', 'sans-serif']
+      },
+    }
   }
 }

@@ -1,19 +1,9 @@
+import Menu from "@/components/Menu/Menu";
 import Submenu from "@/components/Submenu/Submenu";
 import "./globals.css";
-import { Inter, Quicksand, Roboto } from "next/font/google";
-import Menu from "@/components/Menu/Menu";
 
-const inter = Inter({ subsets: ["latin"] });
-const quicksand = Quicksand({
-  subsets: ["latin"],
-  variable: "--font-quicksand",
-});
-const roboto = Roboto({
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "700"],
-  variable: "--font-roboto",
-});
+//Fonts
+import { inter, quicksand, roboto, barlow } from "./fonts";
 
 export const metadata = {
   title: "Missa Cifras",
@@ -28,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${inter.className} ${quicksand.variable} ${roboto.variable}`}
+        className={`${inter.className} ${quicksand.variable} ${roboto.variable} ${barlow.variable}`}
       >
         <Menu />
         <Submenu />
