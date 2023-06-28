@@ -1,23 +1,28 @@
-import Submenu from "@/components/Submenu/Submenu";
 import "./globals.css";
-import { Inter, Quicksand, Roboto } from "next/font/google";
-import Menu from "@/components/Menu/Menu";
+import { Inter } from "next/font/google";
+
 
 const inter = Inter({ subsets: ["latin"] });
+
+//Fonts
+import { Quicksand } from "next/font/google";
+import { Roboto } from "next/font/google";
+
 const quicksand = Quicksand({
+  weight: ["300", "400", "500", "600", "700"],
   subsets: ["latin"],
   variable: "--font-quicksand",
 });
 const roboto = Roboto({
-  subsets: ["latin"],
-  display: "swap",
   weight: ["300", "400", "500", "700"],
+  subsets: ["latin"],
   variable: "--font-roboto",
 });
 
+
 export const metadata = {
-  title: "Missa Cifras",
-  description: "Site de música católica",
+  title: "MissaCifras",
+  description: "Evangelizando o Brasil!",
 };
 
 export default function RootLayout({
@@ -26,14 +31,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+
     <html lang="pt-br">
       <body
-        className={`${inter.className} ${quicksand.variable} ${roboto.variable}`}
+        className={`${quicksand.variable} ${roboto.variable} ${boldfinger.variable}`}
       >
         <Menu />
         <Submenu />
         {children}
       </body>
+
     </html>
   );
 }
