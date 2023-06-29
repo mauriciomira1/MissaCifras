@@ -21,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${inter.variable} ${quicksand.variable} ${roboto.variable} ${barlow.variable}`}
+        className={`${inter.variable} ${quicksand.variable} ${roboto.variable} ${barlow.variable} justify-center`}
       >
         <Menu />
         <Submenu />

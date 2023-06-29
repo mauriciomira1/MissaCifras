@@ -6,12 +6,14 @@ export default function CoverMain() {
   const titleCoverMain = "Nova aula do Missionário Shalom";
 
   return (
-    <div className="w-auto bg-black max-w-[90rem] pb-1.5 flex relative justify-center items-center">
-      <Image
-        src={coverMainImg}
-        alt="titleCoverMain"
-        className="rounded-lg bg- w-full h-full"
-      />
+    <div className="w-full bg-black h-60 rounded-lg max-w-[90rem] mb-2.5 flex relative justify-center items-center overflow-hidden">
+      <div className="absolute -bottom-80 w-full">
+        <Image
+          src={coverMainImg}
+          alt="titleCoverMain"
+          className="object-cover transition-transform duration-300 opacity-50 transform scale-110 hover:scale-125"
+        />
+      </div>
       <div className="absolute flex flex-col items-center">
         <h1 className="cursor-default text-3xl text-white font-highlight">
           MISSIONÁRIO
@@ -20,7 +22,7 @@ export default function CoverMain() {
           SHALOM
         </h2>
         <ButtonStyle01
-          className="bg-gray-800 opacity-80 text-white hover:opacity-90 mt-2"
+          className="bg-gray-800 opacity-80 text-white duration-150 hover:opacity-90 hover:bg-secondaryColor mt-2"
           btnTitle="Nova aula disponível"
         />
         <p className="font-text font-medium text-white drop-shadow-sm cursor-default">

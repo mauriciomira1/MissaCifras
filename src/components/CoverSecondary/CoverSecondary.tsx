@@ -16,21 +16,33 @@ const CoverSecondary = () => {
 
   return (
     <div className="flex flex-wrap justify-between max-w-[90rem] w-auto">
-      <Image
-        src={cover01}
-        alt={title01}
-        className={`rounded-lg ${styles.cover}`}
-      />
-      <Image
-        src={cover02}
-        alt={title02}
-        className={`rounded-lg ${styles.cover}`}
-      />
-      <Image
-        src={cover03}
-        alt={title03}
-        className={`rounded-lg ${styles.cover}`}
-      />
+      <div
+        className={`relative overflow-hidden rounded-lg cursor-pointer ${styles.cover}`}
+      >
+        <Image
+          src={cover01}
+          alt={title01}
+          className="transition-transform duration-300 transform scale-100 hover:scale-105"
+        />
+      </div>
+      <div
+        className={`relative overflow-hidden rounded-lg cursor-pointer ${styles.cover}`}
+      >
+        <Image
+          src={cover02}
+          alt={title02}
+          className="transition-transform duration-300 transform scale-100 hover:scale-105"
+        />
+      </div>
+      <div
+        className={`relative overflow-hidden rounded-lg cursor-pointer ${styles.cover}`}
+      >
+        <Image
+          src={cover03}
+          alt={title03}
+          className="transition-transform duration-300 transform scale-100 hover:scale-105"
+        />
+      </div>
     </div>
   );
 };

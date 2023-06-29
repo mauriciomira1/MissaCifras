@@ -1,9 +1,11 @@
 import CoverMain from "@/components/CoverMain/CoverMain";
+import CoverSecondary from "@/components/CoverSecondary/CoverSecondary";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex flex-col items-center justify-center mx-4">
       <CoverMain />
+      <CoverSecondary />
     </main>
   );
 }
