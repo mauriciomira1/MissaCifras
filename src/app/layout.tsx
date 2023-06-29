@@ -21,11 +21,11 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${inter.variable} ${quicksand.variable} ${roboto.variable} ${barlow.variable} justify-center`}
+        className={`${inter.variable} ${quicksand.variable} ${roboto.variable} ${barlow.variable}`}
       >
         <Menu />
         <Submenu />
-        {children}
+        <div className="flex flex-col items-center">{children}</div>
       </body>
     </html>
   );

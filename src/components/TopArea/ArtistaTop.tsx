@@ -10,7 +10,7 @@ interface itemProps {
 
 const ArtistaTop = (props: itemProps) => {
   return (
-    <div className="w-60 h-28 hover:bg-[#F5F5F5] rounded-s-lg hover:border-r-2 hover:-mr-0.5 hover:border-primaryColor text-gray-200 flex items-center ">
+    <div className="w-64 h-28 text-gray-200 flex items-center rounded-s-lg hover:border-r-2 hover:border-primaryColor hover:bg-[#F5F5F5]">
       <div className="overflow-hidden rounded-full ml-4">
         <Image
           src={props.Photo}

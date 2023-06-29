@@ -6,11 +6,11 @@ export default function CoverMain() {
   const titleCoverMain = "Nova aula do Missionário Shalom";
 
   return (
-    <div className="w-full bg-black h-60 rounded-lg max-w-[90rem] mb-2.5 flex relative justify-center items-center overflow-hidden">
+    <div className="w-full bg-black h-60 rounded-lg mb-2.5 flex relative justify-center items-center overflow-hidden">
       <div className="absolute -bottom-80 w-full">
         <Image
           src={coverMainImg}
-          alt="titleCoverMain"
+          alt={titleCoverMain}
           className="object-cover transition-transform duration-300 opacity-50 transform scale-110 hover:scale-125"
         />
       </div>

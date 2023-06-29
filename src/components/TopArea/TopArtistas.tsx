@@ -10,10 +10,38 @@ const TopArtistas = () => {
       </h1>
       <div>
         <ArtistaTop
-          idAuthor="123"
+          idAuthor="top-artista-1"
           Author="Missionário shalom"
           MusicName="Eis me aqui"
           MusicNumber={1}
+          Photo={Artist01}
+        />
+        <ArtistaTop
+          idAuthor="top-artista-2"
+          Author="Eugênio Jorge"
+          MusicName="Ninguém te ama como eu"
+          MusicNumber={2}
+          Photo={Artist01}
+        />
+        <ArtistaTop
+          idAuthor="top-artista-3"
+          Author="Rosa de Saron"
+          MusicName="Mire as estrelas"
+          MusicNumber={3}
+          Photo={Artist01}
+        />
+        <ArtistaTop
+          idAuthor="top-artista-4"
+          Author="Comunidade shalom"
+          MusicName="Belíssimo Esposo"
+          MusicNumber={4}
+          Photo={Artist01}
+        />
+        <ArtistaTop
+          idAuthor="top-artista-5"
+          Author="Gui Teles"
+          MusicName="Belo Lar"
+          MusicNumber={5}
           Photo={Artist01}
         />
       </div>

@@ -2,6 +2,8 @@ import React from "react";
 
 interface btnProps {
   btnTitle: string | "Botão";
+  textFont?: string | "font-text";
+  texSize?: string | "font-normal";
   icon?: string;
   className: string;
   id?: string;
@@ -10,7 +12,7 @@ interface btnProps {
 const ButtonStyle01 = (props: btnProps) => {
   return (
     <button
-      className={`uppercase font-text font-semibold h-8 flex flex-wrap items-center justify-center gap-1 px-2 rounded ${props.className}`}
+      className={`uppercasefont-semibold ${props.textFont} ${props.texSize} py-1 first-letter:flex flex-wrap items-center justify-center gap-1 px-3 rounded ${props.className}`}
       id={props.id}
     >
       {props.icon}
