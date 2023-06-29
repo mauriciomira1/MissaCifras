@@ -1,7 +1,65 @@
+import MusicaTop from "./MusicaTop";
+
 const TopAcessadas = () => {
   return (
     <div>
-      <h1>TopAcessadas</h1>
+      <h1>Mais acessadas</h1>
+      <div className="flex flex-wrap gap-1">
+        <div className="flex flex-col">
+          <MusicaTop
+            MusicNumber={1}
+            MusicName="Belo Lar"
+            MusicAuthor="Gui Teles"
+          />
+          <MusicaTop
+            MusicNumber={1}
+            MusicName="Belo Lar"
+            MusicAuthor="Gui Teles"
+          />
+          <MusicaTop
+            MusicNumber={1}
+            MusicName="Belo Lar"
+            MusicAuthor="Gui Teles"
+          />
+          <MusicaTop
+            MusicNumber={1}
+            MusicName="Belo Lar"
+            MusicAuthor="Gui Teles"
+          />
+          <MusicaTop
+            MusicNumber={1}
+            MusicName="Belo Lar"
+            MusicAuthor="Gui Teles"
+          />
+        </div>
+        <div>
+          <MusicaTop
+            MusicNumber={1}
+            MusicName="Belo Lar"
+            MusicAuthor="Gui Teles"
+          />
+          <MusicaTop
+            MusicNumber={1}
+            MusicName="Belo Lar"
+            MusicAuthor="Gui Teles"
+          />
+          <MusicaTop
+            MusicNumber={1}
+            MusicName="Belo Lar"
+            MusicAuthor="Gui Teles"
+          />
+          <MusicaTop
+            MusicNumber={1}
+            MusicName="Belo Lar"
+            MusicAuthor="Gui Teles"
+          />
+          <MusicaTop
+            MusicNumber={1}
+            MusicName="Belo Lar"
+            MusicAuthor="Gui Teles"
+          />
+        </div>
+      </div>
     </div>
   );
 };
