@@ -9,7 +9,7 @@ import "./globals.css";
 import { inter, quicksand, roboto, barlow } from "./fonts";
 
 export const metadata = {
-  title: "Missa Cifras",
+  title: "Missa Cifras - Música católica do jeito certo!",
   description: "Música católica do jeito certo!",
 };
 

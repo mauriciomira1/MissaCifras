@@ -3,7 +3,9 @@ import MusicaTop from "./MusicaTop";
 const TopAcessadas = () => {
   return (
     <div>
-      <h1 className="font-text font-bold uppercase text-4xl">Mais acessadas</h1>
+      <h1 className="font-highlight font-bold uppercase text-4xl text-primaryColor mb-4">
+        Mais acessadas
+      </h1>
       <div className="flex flex-wrap gap-1">
         <div className="flex flex-col">
           <MusicaTop
@@ -12,49 +14,49 @@ const TopAcessadas = () => {
             MusicAuthor="Gui Teles"
           />
           <MusicaTop
-            MusicNumber={1}
-            MusicName="Belo Lar"
-            MusicAuthor="Gui Teles"
+            MusicNumber={2}
+            MusicName="Ninguém te ama como eu"
+            MusicAuthor="Eugênio Jorge"
           />
           <MusicaTop
-            MusicNumber={1}
-            MusicName="Belo Lar"
-            MusicAuthor="Gui Teles"
+            MusicNumber={3}
+            MusicName="Qual é a chave"
+            MusicAuthor="Adriana Arydes"
           />
           <MusicaTop
-            MusicNumber={1}
-            MusicName="Belo Lar"
-            MusicAuthor="Gui Teles"
+            MusicNumber={4}
+            MusicName="Amigos pela fé"
+            MusicAuthor="Anjos de Resgate"
           />
           <MusicaTop
-            MusicNumber={1}
+            MusicNumber={5}
             MusicName="Belo Lar"
             MusicAuthor="Gui Teles"
           />
         </div>
         <div>
           <MusicaTop
-            MusicNumber={1}
+            MusicNumber={6}
             MusicName="Belo Lar"
             MusicAuthor="Gui Teles"
           />
           <MusicaTop
-            MusicNumber={1}
+            MusicNumber={7}
             MusicName="Belo Lar"
             MusicAuthor="Gui Teles"
           />
           <MusicaTop
-            MusicNumber={1}
+            MusicNumber={8}
             MusicName="Belo Lar"
             MusicAuthor="Gui Teles"
           />
           <MusicaTop
-            MusicNumber={1}
+            MusicNumber={9}
             MusicName="Belo Lar"
             MusicAuthor="Gui Teles"
           />
           <MusicaTop
-            MusicNumber={1}
+            MusicNumber={10}
             MusicName="Belo Lar"
             MusicAuthor="Gui Teles"
           />

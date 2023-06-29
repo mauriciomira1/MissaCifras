@@ -10,6 +10,7 @@ export const inter = Inter({
 // Fonte para os textos, menu e subtítulos
 export const quicksand = Quicksand({
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   variable: "--font-quicksand",
 });
 
