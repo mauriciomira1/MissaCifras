@@ -6,15 +6,17 @@ interface itemProps {
 
 const MusicaTop = (props: itemProps) => {
   return (
-    <div className="w-72 h-28 bg-[#FFF0EC] rounded-e-lg border-s-2 hover:border-secondaryColor border-opacity-100 flex items-center gap-7">
-      <h1 className="font-text font-black text-7xl ml-7 hover:text-secondaryColor text-gray-200">
+    <div className="w-72 h-28 hover:bg-[#FFF0EC] rounded-e-lg hover:border-l-2 hover:-ml-0.5 hover:border-secondaryColor text-gray-200 hover:text-secondaryColor flex items-center gap-7">
+      <h1 className="font-text font-black text-7xl ml-7 cursor-default hover:text-secondaryColor">
         {props.MusicNumber}
       </h1>
-      <div className="">
-        <h2 className="font-black font-text text-lg -mb-2">
+      <div className="font-text">
+        <h2 className="font-black font-text hover:text-secondaryColor text-gray-950 text-lg -mb-1 cursor-pointer">
           {props.MusicName}
         </h2>
-        <h3 className="font-text text-gray-600 text-sm">{props.MusicAuthor}</h3>
+        <h3 className="font-text text-gray-400 text-sm cursor-pointer hover:text-secondaryColor hover:font-bold">
+          {props.MusicAuthor}
+        </h3>
       </div>
     </div>
   );
