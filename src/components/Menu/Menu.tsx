@@ -6,13 +6,13 @@ import { useState } from "react";
 // Importando imagens
 import logo from "../../public/images/generic/logo.png";
 import searchIcon from "../../public/images/generic/search-icon.svg";
-import User from "../../shared/icons/user";
 import Image from "next/image";
+import userIcon from "../../public/images/generic/user.svg";
 
 const Menu = () => {
   const [search, setSearch] = useState("");
   const classNameFromItemsMenu =
-    "h-full px-2 hover:border-b-4 border-primaryColor flex flex-wrap items-center justify-center gap-1 text-secondaryColor hover:text-primaryColor hover:cursor-pointer duration-100";
+    "h-full px-2 hover:border-b-4 font-text font-bold border-primaryColor flex flex-wrap items-center justify-center gap-1 text-secondaryColor hover:text-primaryColor hover:cursor-pointer duration-100";
 
   return (
     <div className="flex flex-wrap px-3 h-16 border-b-1 shadow-md items-center justify-between">
@@ -28,7 +28,7 @@ const Menu = () => {
             <Image src={searchIcon} alt="Pesquisar" width={20} />
           </span>
           <input
-            className="placeholder:italic placeholder:font-light block bg-white w-full border border-slate-300 rounded-full py-1.5 pl-9 pr-3 shadow-sm focus:outline-none focus:border-gray-400 sm:text-sm hover:bg-gray-50"
+            className="placeholder:font-normal placeholder:text-gray-400 block bg-white w-full border border-slate-300 rounded-full py-1.5 pl-9 pr-3 shadow-sm focus:outline-none focus:border-gray-400 sm:text-sm hover:bg-gray-50"
             placeholder="Qual música você vai louvar hoje?"
             type="text"
             name="search"
@@ -44,8 +44,8 @@ const Menu = () => {
           <li className={classNameFromItemsMenu}>COLABORE</li>
           <li className={classNameFromItemsMenu}>FALE CONOSCO</li>
           <li className={classNameFromItemsMenu}>ENVIAR CIFRA</li>
-          <li className="h-8 flex flex-wrap items-center justify-center gap-1 text-white bg-secondaryColor px-2 rounded hover:bg-red-600 hover:cursor-pointer pr-3">
-            {/* <User /> */}
+          <li className="h-8 flex  font-text font-bold flex-wrap items-center justify-center gap-1 text-white bg-secondaryColor px-2 rounded hover:bg-red-600 hover:cursor-pointer pr-3 pl-2 ml-2">
+            <Image src={userIcon} alt="Usuário" />
             CADASTRE-SE
           </li>
         </ul>

@@ -28,23 +28,14 @@ module.exports = {
       red: colors.red,
     },
 
-    fontFamily: {
-      'sans': ['Quicksand', 'Roboto', 'Barlow', 'sans-serif'],
-      'body': ['Quicksand'],
-      extend: {
-        fontFamily: {
-          quicksand: ['var(--font-quicksand)'],
-          roboto: ['var(--font-roboto)'],
-          barlow: ['var(--font-barlow)'],
-        },
-      }
-    },
-
     extend: {
       fontFamily: {
-        'quicksand': ['Quicksand', 'sans-serif'],
-        'barlow': ['Barlow', 'sans-serif']
+        default: ['var(--font-inter)'],
+        text: ['var(--font-quicksand)'],
+        cifra: ['var(--font-roboto)'],
+        highlight: ['var(--font-barlow)'],
       },
-    }
-  }
+    },
+  },
+  plugins: [],
 }

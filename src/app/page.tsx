@@ -1,6 +1,4 @@
 import CoverMain from "@/components/CoverMain/CoverMain";
-import Menu from "@/components/Menu/Menu";
-import Image from "next/image";
 
 export default function Home() {
   return (

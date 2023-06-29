@@ -10,7 +10,7 @@ interface btnProps {
 const ButtonStyle01 = (props: btnProps) => {
   return (
     <button
-      className={`uppercase font-quicksand font-bold h-8 flex flex-wrap items-center justify-center gap-1 px-2 rounded ${props.className}`}
+      className={`uppercase font-text font-semibold h-8 flex flex-wrap items-center justify-center gap-1 px-2 rounded ${props.className}`}
       id={props.id}
     >
       {props.icon}

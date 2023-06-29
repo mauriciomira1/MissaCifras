@@ -1,13 +1,16 @@
+// ------ Components ------
 import Menu from "@/components/Menu/Menu";
 import Submenu from "@/components/Submenu/Submenu";
+
+// ------ CSS global ------
 import "./globals.css";
 
-//Fonts
+// ------ Fonts ------
 import { inter, quicksand, roboto, barlow } from "./fonts";
 
 export const metadata = {
   title: "Missa Cifras",
-  description: "Site de música católica",
+  description: "Música católica do jeito certo!",
 };
 
 export default function RootLayout({
@@ -18,7 +21,7 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${inter.className} ${quicksand.variable} ${roboto.variable} ${barlow.variable}`}
+        className={`${inter.variable} ${quicksand.variable} ${roboto.variable} ${barlow.variable}`}
       >
         <Menu />
         <Submenu />
