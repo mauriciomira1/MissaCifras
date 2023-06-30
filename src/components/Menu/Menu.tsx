@@ -3,6 +3,8 @@
 // Hooks do React
 import { useState } from "react";
 
+// Importando SVGs
+
 // Importando imagens
 import logo from "../../public/images/generic/logo.png";
 import searchIcon from "../../public/images/generic/search-icon.svg";

@@ -22,10 +22,10 @@ export default function CoverMain() {
           SHALOM
         </h2>
         <ButtonStyle01
-          className="bg-gray-800 opacity-80 text-white duration-150 hover:opacity-90 hover:bg-secondaryColor mt-2"
+          className="bg-white opacity-60 text-primaryColor duration-150 hover:opacity-90 hover:bg-secondaryColor mt-2 text-lg font-text font-bold"
           btnTitle="Nova aula disponível"
         />
-        <p className="font-text font-medium text-white drop-shadow-sm cursor-default">
+        <p className="font-text font-medium text-sm text-white drop-shadow-sm cursor-default mt-1">
           Professor Vitor Santiago
         </p>
       </div>
