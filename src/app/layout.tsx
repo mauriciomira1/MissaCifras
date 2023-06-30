@@ -7,6 +7,7 @@ import "./globals.css";
 
 // ------ Fonts ------
 import { inter, quicksand, roboto, barlow } from "./fonts";
+import Footer from "@/components/Footer/Footer";
 
 export const metadata = {
   title: "Missa Cifras - Música católica do jeito certo!",
@@ -26,6 +27,7 @@ export default function RootLayout({
         <Menu />
         <Submenu />
         <div className="flex flex-col items-center">{children}</div>
+        <Footer />
       </body>
     </html>
   );
