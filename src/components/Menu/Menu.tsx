@@ -21,7 +21,9 @@ const Menu = () => {
     <div className="flex flex-wrap px-3 h-16 border-b-1 shadow-md items-center justify-between">
       {/* Logotipo */}
       <div className="hover:opacity-60 cursor-pointer">
-        <Image src={logo} alt="Logotipo" width={150} />
+        <Link href="/">
+          <Image src={logo} alt="Logotipo" width={150} />
+        </Link>
       </div>
       {/* Barra de pesquisa */}
       <div className="w-96">
@@ -47,13 +49,13 @@ const Menu = () => {
             <Link href="/acordes">ACORDES</Link>
           </li>
           <li className={classNameFromItemsMenu}>
-            <Link href="/colabore">COLABORE</Link>
+            <Link href="/pages/colabore">COLABORE</Link>
           </li>
           <li className={classNameFromItemsMenu}>
-            <Link href="/fale-conosco">FALE CONOSCO</Link>
+            <Link href="/pages/fale-conosco">FALE CONOSCO</Link>
           </li>
           <li className={classNameFromItemsMenu}>
-            <Link href="enviar-cifra">ENVIAR CIFRA</Link>
+            <Link href="/pages/enviar-cifra">ENVIAR CIFRA</Link>
           </li>
           <li className="h-8 flex  font-text font-bold flex-wrap items-center justify-center gap-1 text-white bg-secondaryColor px-2 rounded hover:bg-red-600 hover:cursor-pointer pr-3 pl-2 ml-2">
             <Image src={userIcon} alt="Usuário" />
