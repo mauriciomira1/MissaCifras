@@ -26,7 +26,7 @@ const createUserFormSchema = z
       .string()
       .nonempty("Por favor, insira o seu e-mail.")
       .email("Formato de e-mail inválido"),
-    password: z.string().min(6, "A senha deve ter pelo menos 6 caracteres."),
+    password: z.string().min(6, "Insira uma senha válida."),
     confirmPassword: z.string(),
   })
   // Verificando se o campo e senha e 'confirme a senha' são coincidentes
@@ -61,33 +61,19 @@ const FormularioLogin = () => {
       <Image src={SiteLogo} alt="Missa Cifras" width={160} />
 
       <h2 className="font-text font-bold text-xl mt-5 text-primaryColor">
-        Bem-vindo
+        Bem-vindo de volta!
       </h2>
 
-      <p className="font-text font-semibold text-xs text-gray-400 mb-5">
-        Cadastre-se <strong>grátis</strong> e seja um evangelizador
+      <p className="font-text font-semibold text-xs text-gray-400 mb-5 mx-6 text-center">
+        Venha e levar a nossa santa música a todos os cantos do nosso país.
       </p>
 
-      <button className="duration-150 w-full py-1.5 font-text text-sm font-semibold flex items-center justify-center gap-2 bg-white border rounded border-gray-300 hover:bg-gray-200 hover:border-gray-40000 active:bg-gray-300">
+      <button className="duration-150 w-full py-2 font-text text-sm font-semibold flex items-center justify-center gap-2 bg-white border rounded border-gray-300 hover:bg-gray-200 hover:border-gray-40000 active:bg-gray-300">
         <span className="text-lg">
           <FcGoogle />
         </span>
-        Cadastrar com Google
+        Login com Google
       </button>
-
-      <div className="flex flex-col my-1.5 mt-4 w-full">
-        <label className="font-text text-xs text-primaryColor font-bold">
-          Nome completo
-        </label>
-        <input
-          type="text"
-          className="text-sm border-gray-300 focus:outline-blue-600 px-1.5 contrast-more:border-primaryColor w-full h-8 bg-white border rounded hover:bg-gray-100 hover:border-gray-400 duration-150"
-          {...register("fullname")}
-        />
-        {errors.fullname && (
-          <span className={styles.errorMessage}>{errors.fullname.message}</span>
-        )}
-      </div>
 
       <div className="flex flex-col my-1.5 w-full">
         <label className="font-text text-xs text-primaryColor font-bold">
@@ -118,40 +104,21 @@ const FormularioLogin = () => {
         )}
       </div>
 
-      <div className="flex flex-col my-1.5 w-full">
-        <label className="font-text text-xs text-primaryColor font-bold">
-          Confirme a senha
-        </label>
-        <input
-          type="password"
-          autoComplete="on"
-          className="text-sm border-gray-300 focus:outline-blue-600 px-1.5 contrast-more:border-primaryColor w-full h-8 bg-white border rounded hover:bg-gray-100 hover:border-gray-400 duration-150"
-          {...register("confirmPassword")}
-        />
-        {errors.confirmPassword && (
-          <span className={styles.errorMessage}>
-            {errors.confirmPassword.message}
-          </span>
-        )}
-      </div>
-
       <div className="flex items-start w-full my-2">
         <button
           type="submit"
-          className="font-text text-xs font-semibold text-white bg-primaryColor rounded py-2 px-6 hover:bg-sky-900 duration-150 active:bg-sky-950"
+          className="font-text text-xs font-semibold text-white bg-primaryColor rounded py-2 px-10 hover:bg-sky-900 duration-150 active:bg-sky-950"
         >
-          Cadastrar
+          Login
         </button>
       </div>
-      <p className="font-text font-semibold text-sm mt-3 text-primaryColor cursor-default">
-        Já tem cadastro?
-        <Link
-          href="/pages/login"
-          className="text-secondaryColor font-bold hover:text-orange-800 ml-1"
-        >
-          Faça login
-        </Link>
-      </p>
+
+      <Link
+        href="/pages/cadastro"
+        className="text-secondaryColor font-semibold pt-3 hover:text-orange-800 ml-1"
+      >
+        Esqueceu a senha?
+      </Link>
     </form>
   );
 };

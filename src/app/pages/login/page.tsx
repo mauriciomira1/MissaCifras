@@ -20,7 +20,7 @@ const Login = () => {
           Santa Terezinha do Menino Jesus
         </cite>
         <p className="text-white font-text font-semibold text-sm w-72 mt-24 text-right">
-          Faça login na nossa plataforma.
+          Faça login na nossa plataforma e venha evangelizar através da música.
         </p>
       </div>
       <div className="flex flex-col items-center">
