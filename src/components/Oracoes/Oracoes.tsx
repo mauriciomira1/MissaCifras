@@ -5,7 +5,7 @@ import OracoesDaIgreja from "../../public/images/home/oracoes-igreja.jpg";
 
 const Oracoes = () => {
   return (
-    <div className="flex gap-6 w-full">
+    <div className="flex gap-6 w-full mt-16">
       <div className="hover:opacity-95 flex flex-col items-center justify-center p-6 w-1/2 overflow-hidden rounded-lg relative h-36 bg-gradient-to-r from-[#FF985E] to-secondaryColor">
         <div className="z-10 flex flex-col items-center justify-center ">
           <h2 className="font-highlight text-white text-4xl uppercase mb-2 cursor-default">

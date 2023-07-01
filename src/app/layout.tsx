@@ -25,7 +25,7 @@ export default function RootLayout({
         className={`${inter.variable} ${quicksand.variable} ${roboto.variable} ${barlow.variable}`}
       >
         <Menu />
-        <Submenu />
+
         <div className="flex flex-col items-center">{children}</div>
         <Footer />
       </body>

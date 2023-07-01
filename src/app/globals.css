@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 @layer components {
+
   /* Classes com paleta de cores do site para textos */
   .text-primary {
     @apply text-primaryColor;

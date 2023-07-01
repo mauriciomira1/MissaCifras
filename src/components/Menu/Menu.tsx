@@ -12,7 +12,13 @@ import Image from "next/image";
 import userIcon from "../../public/images/generic/user.svg";
 import Link from "next/link";
 
+interface MenuProps {
+  pageSrc: string;
+}
+
 const Menu = () => {
+  const onClickMenuItem = ({ pageSrc }: MenuProps) => {};
+
   const [search, setSearch] = useState("");
   const classNameFromItemsMenu =
     "h-full px-2 hover:border-b-4 font-text font-bold border-primaryColor flex flex-wrap items-center justify-center gap-1 text-secondaryColor hover:text-primaryColor hover:cursor-pointer duration-100";
@@ -46,20 +52,30 @@ const Menu = () => {
       <div className="h-full flex items-center">
         <ul className="flex flex-wrap items-center h-full font-semibold text-xs">
           <li className={classNameFromItemsMenu}>
-            <Link href="/acordes">ACORDES</Link>
+            <Link href="/pages/acordes" className="py-6">
+              ACORDES
+            </Link>
           </li>
           <li className={classNameFromItemsMenu}>
-            <Link href="/pages/colabore">COLABORE</Link>
+            <Link href="/pages/colabore" className="py-6">
+              COLABORE
+            </Link>
           </li>
           <li className={classNameFromItemsMenu}>
-            <Link href="/pages/fale-conosco">FALE CONOSCO</Link>
+            <Link href="/pages/fale-conosco" className="py-6">
+              FALE CONOSCO
+            </Link>
           </li>
           <li className={classNameFromItemsMenu}>
-            <Link href="/pages/enviar-cifra">ENVIAR CIFRA</Link>
+            <Link href="/pages/enviar-cifra" className="py-6">
+              ENVIAR CIFRA
+            </Link>
           </li>
-          <li className="h-8 flex  font-text font-bold flex-wrap items-center justify-center gap-1 text-white bg-secondaryColor px-2 rounded hover:bg-red-600 hover:cursor-pointer pr-3 pl-2 ml-2">
-            <Image src={userIcon} alt="Usuário" />
-            CADASTRE-SE
+          <li className="h-8 flex font-text font-bold items-center justify-center text-white bg-secondaryColor px-2 rounded hover:bg-red-600 hover:cursor-pointer pr-3 pl-2 ml-2">
+            <Link href="/pages/cadastro" className="flex items-center">
+              <Image src={userIcon} alt="Usuário" />
+              CADASTRE-SE
+            </Link>
           </li>
         </ul>
       </div>

@@ -8,7 +8,7 @@ import SiteLogo from "../../../public/images/generic/logo.png";
 import { FcGoogle } from "react-icons/fc";
 
 // CSS
-import styles from "./FormularioCadastro.module.css";
+import styles from "./FormularioLogin.module.css";
 
 // Hooks do next
 import Link from "next/link";
@@ -38,7 +38,7 @@ const createUserFormSchema = z
 // Criando um typeof para evitar o erro em 'errors' dentro do return
 type createUserFormData = z.infer<typeof createUserFormSchema>;
 
-const FormularioCadastro = () => {
+const FormularioLogin = () => {
   // register (usado para validar os inputs); handleSubmit (usado para enviar o Form); formState (usado para emitir a mensagem do erro)
   const {
     register,
@@ -156,4 +156,4 @@ const FormularioCadastro = () => {
   );
 };
 
-export default FormularioCadastro;
+export default FormularioLogin;

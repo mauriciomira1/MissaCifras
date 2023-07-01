@@ -4,7 +4,7 @@ import bg404 from "../public/images/not-found/404-bg.jpg";
 
 const NotFound = () => {
   return (
-    <div className="min-h-screen min-w-screen flex flex-wrap items-center justify-center">
+    <div className="my-20 min-w-screen flex flex-wrap items-center justify-center">
       <div className="flex flex-col items-center justify-center">
         <Image src={bg404} alt="Erro 404" width={600} className="max-w-lg" />
       </div>
@@ -19,7 +19,7 @@ const NotFound = () => {
         </p>
         <Link
           href="/"
-          className="bg-secondaryColor px-4 py-2 rounded font-text text-lg font-bold text-white m-4 hover:opacity-90"
+          className="bg-secondaryColor px-3 py-2 rounded font-text font-bold text-white m-4 hover:opacity-90"
         >
           Página Inicial
         </Link>
