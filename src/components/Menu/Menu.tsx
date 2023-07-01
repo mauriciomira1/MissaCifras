@@ -10,6 +10,7 @@ import logo from "../../public/images/generic/logo.png";
 import searchIcon from "../../public/images/generic/search-icon.svg";
 import Image from "next/image";
 import userIcon from "../../public/images/generic/user.svg";
+import Link from "next/link";
 
 const Menu = () => {
   const [search, setSearch] = useState("");
@@ -42,10 +43,18 @@ const Menu = () => {
       {/* Links de navegação no site */}
       <div className="h-full flex items-center">
         <ul className="flex flex-wrap items-center h-full font-semibold text-xs">
-          <li className={classNameFromItemsMenu}>ACORDES</li>
-          <li className={classNameFromItemsMenu}>COLABORE</li>
-          <li className={classNameFromItemsMenu}>FALE CONOSCO</li>
-          <li className={classNameFromItemsMenu}>ENVIAR CIFRA</li>
+          <li className={classNameFromItemsMenu}>
+            <Link href="/acordes">ACORDES</Link>
+          </li>
+          <li className={classNameFromItemsMenu}>
+            <Link href="/colabore">COLABORE</Link>
+          </li>
+          <li className={classNameFromItemsMenu}>
+            <Link href="/fale-conosco">FALE CONOSCO</Link>
+          </li>
+          <li className={classNameFromItemsMenu}>
+            <Link href="enviar-cifra">ENVIAR CIFRA</Link>
+          </li>
           <li className="h-8 flex  font-text font-bold flex-wrap items-center justify-center gap-1 text-white bg-secondaryColor px-2 rounded hover:bg-red-600 hover:cursor-pointer pr-3 pl-2 ml-2">
             <Image src={userIcon} alt="Usuário" />
             CADASTRE-SE
