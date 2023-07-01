@@ -13,9 +13,15 @@ const CoverSecondary = () => {
   const title01 = "Palavras do Papa francisco";
   const title02 = "A história por trás da letra";
   const title03 = "Afinal, pra quê ensaio?";
-
+  const redirectLink = (address: string) => {
+    const LinkPalavrasDoPapa = address;
+    window.location.href = LinkPalavrasDoPapa;
+  };
   return (
-    <div className="flex flex-wrap justify-between max-w-[90rem] w-auto">
+    <div
+      /*       onClick={(address) => redirectLink("/palavras-do-papa")} */
+      className="flex flex-wrap justify-between max-w-[90rem] w-auto"
+    >
       <div
         className={`relative overflow-hidden rounded-lg cursor-pointer ${styles.cover}`}
       >
