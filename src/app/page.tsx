@@ -1,6 +1,7 @@
 import BannerApoie from "@/components/Banner-apoie/BannerApoie";
 import CoverMain from "@/components/CoverMain/CoverMain";
 import CoverSecondary from "@/components/CoverSecondary/CoverSecondary";
+import Oracoes from "@/components/Oracoes/Oracoes";
 import QuemSomos from "@/components/QuemSomos/QuemSomos";
 import TopMain from "@/components/TopArea/TopMain";
 
@@ -11,6 +12,7 @@ export default function Home() {
       <CoverSecondary />
       <div className="h-4 w-full my-7 bg-gray-200"></div>
       <TopMain />
+      <Oracoes />
       <BannerApoie />
       <QuemSomos />
     </main>
