@@ -21,11 +21,24 @@ import { zodResolver } from "@hookform/resolvers/zod";
 // Validação de formulário com Zod
 const createUserFormSchema = z
   .object({
-    fullname: z.string().nonempty("Por favor, insira o seu nome."),
+    fullname: z
+      .string()
+      .nonempty("Você precisa inserir um nome.")
+      // Transformando primeira letra do Nome e Sobrenome em maiúscula ao enviar dados
+      .transform((name) => {
+        return name
+          .trim()
+          .split(" ")
+          .map((word) => {
+            return word[0].toLocaleUpperCase().concat(word.substring(1));
+          })
+          .join(" ");
+      }),
     email: z
       .string()
-      .nonempty("Por favor, insira o seu e-mail.")
-      .email("Formato de e-mail inválido"),
+      .nonempty("Você precisa inserir o seu e-mail.")
+      .email("Formato de e-mail inválido")
+      .toLowerCase(),
     password: z.string().min(6, "A senha deve ter pelo menos 6 caracteres."),
     confirmPassword: z.string(),
   })
@@ -43,7 +56,7 @@ const FormularioCadastro = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors }, //desestruturei 'errors' para inseri-los na tela em um <span>
+    formState: { errors }, //desestruturando 'errors' para inseri-los na tela em um <span>
   } = useForm<createUserFormData>({
     resolver: zodResolver(createUserFormSchema),
   });
@@ -76,10 +89,14 @@ const FormularioCadastro = () => {
       </button>
 
       <div className="flex flex-col my-1.5 mt-4 w-full">
-        <label className="font-text text-xs text-primaryColor font-bold">
+        <label
+          htmlFor="fullname"
+          className="font-text text-xs text-primaryColor font-bold"
+        >
           Nome completo
         </label>
         <input
+          id="fullname"
           type="text"
           className="text-sm border-gray-300 focus:outline-blue-600 px-1.5 contrast-more:border-primaryColor w-full h-8 bg-white border rounded hover:bg-gray-100 hover:border-gray-400 duration-150"
           {...register("fullname")}
@@ -90,10 +107,14 @@ const FormularioCadastro = () => {
       </div>
 
       <div className="flex flex-col my-1.5 w-full">
-        <label className="font-text text-xs text-primaryColor font-bold">
+        <label
+          htmlFor="email"
+          className="font-text text-xs text-primaryColor font-bold"
+        >
           E-mail
         </label>
         <input
+          id="email"
           type="email"
           className="text-sm border-gray-300 focus:outline-blue-600 px-1.5 contrast-more:border-primaryColor w-full h-8 bg-white border rounded hover:bg-gray-100 hover:border-gray-400 duration-150"
           {...register("email")}
@@ -104,10 +125,14 @@ const FormularioCadastro = () => {
       </div>
 
       <div className="flex flex-col my-1.5 w-full">
-        <label className="font-text text-xs text-primaryColor font-bold">
+        <label
+          htmlFor="password"
+          className="font-text text-xs text-primaryColor font-bold"
+        >
           Senha
         </label>
         <input
+          id="password"
           type="password"
           autoComplete="on"
           className="text-sm border-gray-300 focus:outline-blue-600 px-1.5 contrast-more:border-primaryColor w-full h-8 bg-white border rounded hover:bg-gray-100 hover:border-gray-400 duration-150"
@@ -119,10 +144,14 @@ const FormularioCadastro = () => {
       </div>
 
       <div className="flex flex-col my-1.5 w-full">
-        <label className="font-text text-xs text-primaryColor font-bold">
+        <label
+          htmlFor="confirmPassword"
+          className="font-text text-xs text-primaryColor font-bold"
+        >
           Confirme a senha
         </label>
         <input
+          id="confirmPassword"
           type="password"
           autoComplete="on"
           className="text-sm border-gray-300 focus:outline-blue-600 px-1.5 contrast-more:border-primaryColor w-full h-8 bg-white border rounded hover:bg-gray-100 hover:border-gray-400 duration-150"

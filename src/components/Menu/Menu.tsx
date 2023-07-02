@@ -71,6 +71,11 @@ const Menu = () => {
               ENVIAR CIFRA
             </Link>
           </li>
+          <li className={classNameFromItemsMenu}>
+            <Link href="/pages/login" className="py-6">
+              LOGIN
+            </Link>
+          </li>
           <li className="h-8 flex font-text font-bold items-center justify-center text-white bg-secondaryColor px-2 rounded hover:bg-red-600 hover:cursor-pointer pr-3 pl-2 ml-2">
             <Link href="/pages/cadastro" className="flex items-center">
               <Image src={userIcon} alt="Usuário" />
