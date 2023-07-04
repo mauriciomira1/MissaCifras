@@ -36,6 +36,7 @@ module.exports = {
         text: ['var(--font-quicksand)'],
         cifra: ['var(--font-roboto)'],
         highlight: ['var(--font-barlow)'],
+        monospace: ['var(--font-robotomono)', 'monospace']
       },
     },
   },

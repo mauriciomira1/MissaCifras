@@ -1,3 +1,4 @@
+import Cifra from "@/components/Cifra/Cifra";
 import Link from "next/link";
 import React from "react";
 
@@ -11,58 +12,40 @@ const CifraArea = () => {
 |   D     |    D     |   G/D   |    G/D     |
 |   D     |    D     |   G/D   |    G/D     |
 
-                    |   D    |     G     |     D
-    |      D      |
+          |   D    |     G     |     D    |      D      |
 Manda teus anjos, sobre nós
-       |       Bm        |         G        |        A    
-|      A    
-|
+    |       Bm        |         G        |      A     |      A    |
 E abençoa todos que esperam em vós
-                  |   D   |     G/D     |     D
-    |      Bm      |
+                  |   D   |     G/D     |     D    |      Bm      |
 Manda teus anjos, pra nos ensinar
-        |   Em    |    A    |   D    |     D4    
-| 
+        |   Em    |    A    |   D    |     D4    | 
 A te louvar, e glorificar
 
-    |            D             |      G          |     A
-     |      D      |
+    |            D             |      G          |     A     |      D      |
 Envia também teu espírito de paz e amor
-            |       F#m        |  Bm   |      Em      |      A     
-|
+            |       F#m        |  Bm   |      Em      |      A     |
 O meu coração tem sede, do meu criador
-    |             D              |      G          |     A
-     |      D      |
+    |             D              |      G          |     A     |      D      |
 Envia senhor os teus anjos, pra nos resgatar
-               |    F#m     |      Bm       |      Em      |      A     
-|   D   |
+               |    F#m     |      Bm       |      Em      |      A     |   D   |
 Pra nos proteger de todo mau, para nos guiar, senhor
 
-                    |   D    |     G     |     D
-    |      D      |
+                    |   D    |     G     |     D    |      D      |
 Manda teus anjos, sobre nós
-       |       Bm        |         G        |        A    
-|      A    
-|
+       |       Bm        |         G        |        A    |      A    |
 E abençoa todos que esperam em vós
-                  |   D   |     G/D     |     D
-    |      Bm      |
+                  |   D   |     G/D     |     D    |      Bm      |
 Manda teus anjos, pra nos ensinar
-        |   Em    |    A    |   D    |     D4    
-| 
+        |   Em    |    A    |   D    |     D4    | 
 A te louvar, e glorificar
 
-               |          D            |        G           |      A
-      |     D     |
+               |          D            |        G           |      A      |     D     |
 Quando acordo olho o céu e canto o meu louvor
-      |       F#m        |   Bm   |      Em      |      A     
-|
+      |       F#m        |   Bm   |      Em      |      A     |
 De todas as manhãs, tu és o meu senhor
-           |           D            |           G           |     A
-     |      D      |
+           |           D            |           G           |     A     |      D      |
 Levantai-nos ó meu Deus e estende tuas mãos
-      |      F#m      |      Bm       |         Em        |   A  
-|   D   |
+      |      F#m      |      Bm       |         Em        |   A  |   D   |
 Tu és o meu refúgio, nas minhas opressões senhor
 
     G        (A  G)     A       F#m       G  A
@@ -91,13 +74,26 @@ A te louvar, e te    amar
 
   return (
     <div className="font-cifra">
-      <h1>{title}</h1>
-      <Link href={artistPage}>{artist}</Link>
+      <h1 className="font-text font-bold text-primaryColor text-3xl">
+        {title}
+      </h1>
+      <Link
+        href={artistPage}
+        className="font-text text-gray-400 hover:text-secondaryColor hover:font-bold"
+      >
+        {artist}
+      </Link>
+      <br />
+      <br />
       <p>
-        <div></div>
         Tom: <span className="font-bold text-secondaryColor">{tom}</span>
       </p>
-      <p>Tempo: {tempo} BPM</p>
+      <p>
+        Tempo: <span className="font-bold">{tempo} BPM</span>
+      </p>
+      <br />
+
+      <Cifra cifraELetra={song} />
     </div>
   );
 };

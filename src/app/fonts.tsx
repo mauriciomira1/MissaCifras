@@ -1,4 +1,10 @@
-import { Inter, Quicksand, Roboto, Barlow_Condensed } from "next/font/google";
+import {
+  Inter,
+  Quicksand,
+  Roboto,
+  Barlow_Condensed,
+  Roboto_Mono,
+} from "next/font/google";
 
 // Fonte padrão
 export const inter = Inter({
@@ -26,4 +32,12 @@ export const barlow = Barlow_Condensed({
   weight: ["700", "800", "900"],
   subsets: ["latin"],
   variable: "--font-barlow",
+});
+
+// Fonte monospace
+export const robotomono = Roboto_Mono({
+  weight: ["400", "500"],
+  subsets: ["latin"],
+  display: "swap",
+  variable: "--font-robotomono",
 });
