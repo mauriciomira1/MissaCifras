@@ -55,7 +55,7 @@ const MenuLateral = () => {
         <Link href="#">Salvar PDF</Link>
       </div>
 
-      <div className="flex justify-center bg-white text-red-600 border-red-600 border-2 font-cifra text-sm font-medium w-44 py-2 rounded shadow-md hover:bg-red-50">
+      <div className="flex justify-center bg-white text-red-600 border-red-600 border-2 font-cifra text-sm font-medium w-44 py-2 rounded shadow-md hover:bg-red-600 hover:text-white">
         <Link href="#">Informar erro</Link>
       </div>
     </div>
