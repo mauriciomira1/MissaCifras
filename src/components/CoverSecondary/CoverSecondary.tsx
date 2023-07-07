@@ -23,25 +23,25 @@ const CoverSecondary = () => {
       className="flex flex-wrap justify-between max-w-[90rem] w-auto"
     >
       <div
-        className={`relative overflow-hidden rounded-lg cursor-pointer ${styles.cover}`}
+        className={`relative overflow-hidden rounded-lg cursor-pointer lg:h-36 ${styles.cover}`}
       >
         <Image
           src={cover01}
           alt={title01}
-          className="transition-transform duration-300 transform scale-100 hover:scale-105"
+          className="w-full  object-center transition-transform duration-300 bg-cover transform scale-100 hover:scale-105"
         />
       </div>
       <div
-        className={`relative overflow-hidden rounded-lg cursor-pointer ${styles.cover}`}
+        className={`relative overflow-hidden rounded-lg cursor-pointer lg:h-36 ${styles.cover}`}
       >
         <Image
           src={cover02}
           alt={title02}
-          className="transition-transform duration-300 transform scale-100 hover:scale-105"
+          className="absolute w-full -bottom-10 transition-transform duration-300 transform scale-100 hover:scale-105"
         />
       </div>
       <div
-        className={`relative overflow-hidden rounded-lg cursor-pointer ${styles.cover}`}
+        className={`relative w-[400] overflow-hidden rounded-lg cursor-pointer lg:h-36 ${styles.cover}`}
       >
         <Image
           src={cover03}
