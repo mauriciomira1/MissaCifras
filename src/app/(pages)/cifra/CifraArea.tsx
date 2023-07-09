@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 const CifraArea = () => {
-  const title = "Manda Teus Anjos";
+  /* const title = "Manda Teus Anjos";
   const artist = "Anjos de Resgate";
   const artistPage = "#";
   const tom = "D";
@@ -70,7 +70,7 @@ A te louvar, e glorificar
          F#m   B  B4    
 A te louvar, e te    amar
 
-[Final] E  A/E  E  A/E  E`;
+[Final] E  A/E  E  A/E  E`; */
 
   return (
     <div className="font-cifra">
