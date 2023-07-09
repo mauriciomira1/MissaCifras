@@ -52,32 +52,32 @@ const Menu = () => {
       <div className="h-full flex items-center">
         <ul className="flex flex-wrap items-center h-full font-semibold text-xs">
           <li className={classNameFromItemsMenu}>
-            <Link href="/pages/acordes" className="py-6">
+            <Link href="/acordes" className="py-6">
               ACORDES
             </Link>
           </li>
           <li className={classNameFromItemsMenu}>
-            <Link href="/pages/colabore" className="py-6">
+            <Link href="/colabore" className="py-6">
               COLABORE
             </Link>
           </li>
           <li className={classNameFromItemsMenu}>
-            <Link href="/pages/fale-conosco" className="py-6">
+            <Link href="/fale-conosco" className="py-6">
               FALE CONOSCO
             </Link>
           </li>
           <li className={classNameFromItemsMenu}>
-            <Link href="/pages/enviar-cifra" className="py-6">
+            <Link href="/enviar-cifra" className="py-6">
               ENVIAR CIFRA
             </Link>
           </li>
           <li className={classNameFromItemsMenu}>
-            <Link href="/pages/login" className="py-6">
+            <Link href="/login" className="py-6">
               LOGIN
             </Link>
           </li>
           <li className="h-8 flex font-text font-bold items-center justify-center text-white bg-secondaryColor px-2 rounded hover:bg-red-600 hover:cursor-pointer pr-3 pl-2 ml-2">
-            <Link href="/pages/cadastro" className="flex items-center">
+            <Link href="/cadastro" className="flex items-center">
               <Image src={userIcon} alt="Usuário" />
               CADASTRE-SE
             </Link>
