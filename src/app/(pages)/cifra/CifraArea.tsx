@@ -2,7 +2,16 @@ import Cifra from "@/components/Cifra/Cifra";
 import Link from "next/link";
 import React from "react";
 
-const CifraArea = () => {
+const getData = async () => {
+  // Usando "npm i -g http-server" + comando "http-server" dentro da pasta do arquivo .json
+  const res = await fetch("http://192.168.3.2:8080/manda-teus-anjos.json");
+  if (!res.ok) {
+    throw new Error("Fetch data falhou!");
+  }
+  return res.json();
+};
+
+const CifraArea = async () => {
   /* const title = "Manda Teus Anjos";
   const artist = "Anjos de Resgate";
   const artistPage = "#";
@@ -72,28 +81,31 @@ A te louvar, e te    amar
 
 [Final] E  A/E  E  A/E  E`; */
 
+  const cifra = await getData();
+  console.log(cifra);
+
   return (
     <div className="font-cifra">
       <h1 className="font-text font-bold text-primaryColor text-3xl">
-        {title}
+        {cifra.title}
       </h1>
       <Link
-        href={artistPage}
+        href={cifra.artistPage}
         className="font-text text-gray-400 hover:text-secondaryColor hover:font-bold"
       >
-        {artist}
+        {cifra.artist}
       </Link>
       <br />
       <br />
       <p>
-        Tom: <span className="font-bold text-secondaryColor">{tom}</span>
+        Tom: <span className="font-bold text-secondaryColor">{cifra.tom}</span>
       </p>
       <p>
-        Tempo: <span className="font-bold">{tempo} BPM</span>
+        Tempo: <span className="font-bold">{cifra.tempo} BPM</span>
       </p>
       <br />
 
-      <Cifra cifraELetra={song} />
+      <Cifra cifraELetra={cifra.song} />
     </div>
   );
 };
