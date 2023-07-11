@@ -17,7 +17,7 @@ const Dashboard = () => {
         <div className="flex flex-col items-center font-text font-bold">
           <p className="text-primaryColor text-center">
             Essa é a sua Dashboard. Confira as suas playlists, veja as suas
-            colaborações, altere seus dados e muito mais.
+            colaborações ou envie uma cifra.
           </p>
           <p className="text-secondaryColor text-center">
             Venha evangelizar com a gente, e vamos levar uma música católica de

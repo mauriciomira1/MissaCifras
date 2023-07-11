@@ -1,16 +1,23 @@
 "use client"; // Usar o 'lado do cliente' ao invés do lado do servidor para esse componente
 
+//NextJS
+import Link from "next/link";
+import Image from "next/image";
+
 // Hooks do React
 import { useState } from "react";
 
-// Importando SVGs
+// Importando Ícones
+import searchIcon from "../../public/images/generic/search-icon.svg";
+import userIcon from "../../public/images/generic/user.svg";
+import { FiMenu } from "react-icons/fi";
 
 // Importando imagens
 import logo from "../../public/images/generic/logo.png";
-import searchIcon from "../../public/images/generic/search-icon.svg";
-import Image from "next/image";
-import userIcon from "../../public/images/generic/user.svg";
-import Link from "next/link";
+import logoMobile from "../../public/images/generic/favicon.png";
+
+// Componentes
+import MenuMobile from "./MenuMobile";
 
 interface MenuProps {
   pageSrc: string;
@@ -25,14 +32,27 @@ const Menu = () => {
 
   return (
     <div className="flex flex-wrap px-3 h-16 border-b-1 shadow-md items-center justify-between">
-      {/* Logotipo */}
-      <div className="hover:opacity-60 cursor-pointer">
+      {/* Logotipo min-width: 1024px */}
+      <div className="hidden lg:block hover:opacity-60 cursor-pointer">
         <Link href="/">
           <Image src={logo} alt="Logotipo" width={150} />
         </Link>
       </div>
+      {/* Menu sanduiche */}
+      <div className="lg:hidden">
+        <FiMenu className="text-2xl" />
+      </div>
+      <div className="w-64 absolute -ml-6 bg-primaryColor">
+        <MenuMobile />
+      </div>
+      {/* Logotipo mobile */}
+      <div className="lg:hidden hover:opacity-60 cursor-pointer">
+        <Link href="/">
+          <Image src={logoMobile} alt="Logotipo" width={50} />
+        </Link>
+      </div>
       {/* Barra de pesquisa */}
-      <div className="w-96">
+      <div className="w-64 lg:w-96">
         <label className="relative block">
           <span className="sr-only">Search</span>
           <span className="absolute inset-y-0 left-0 flex items-center pl-2">
@@ -40,7 +60,7 @@ const Menu = () => {
           </span>
           <input
             className="placeholder:font-normal placeholder:text-gray-400 block bg-white w-full border border-slate-300 rounded-full py-1.5 pl-9 pr-3 shadow-sm focus:outline-none focus:border-gray-400 sm:text-sm hover:bg-gray-50"
-            placeholder="Qual música você vai louvar hoje?"
+            placeholder="Vamos louvar?"
             type="text"
             name="search"
             autoComplete="off"
@@ -49,7 +69,7 @@ const Menu = () => {
         </label>
       </div>
       {/* Links de navegação no site */}
-      <div className="h-full flex items-center">
+      <div className="hidden h-full xl:flex items-center">
         <ul className="flex flex-wrap items-center h-full font-semibold text-xs">
           <li className={classNameFromItemsMenu}>
             <Link href="/acordes" className="py-6">
