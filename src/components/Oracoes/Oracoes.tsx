@@ -8,7 +8,7 @@ const Oracoes = () => {
     <div className="flex gap-6 w-full mt-16">
       <div className="hover:opacity-95 flex flex-col items-center justify-center p-6 w-1/2 overflow-hidden rounded-lg relative h-36 bg-gradient-to-r from-[#FF985E] to-secondaryColor">
         <div className="z-10 flex flex-col items-center justify-center ">
-          <h2 className="font-highlight text-white text-xl md:text-4xl uppercase mb-2 cursor-default">
+          <h2 className="font-highlight font-semibold text-white text-xl md:text-4xl uppercase mb-2 cursor-default">
             Pedido de oração
           </h2>
           <p className="font-text text-xs font-semibold text-center cursor-default text-primaryColor">
@@ -31,7 +31,7 @@ const Oracoes = () => {
 
       <div className="hover:opacity-95 flex flex-col items-center justify-center p-6 w-1/2 overflow-hidden rounded-lg relative h-36 bg-gradient-to-l from-[#ffda5f] to-[#F8BD00]">
         <div className="z-10 flex flex-col items-center justify-center ">
-          <h2 className="font-highlight text-primaryColor text-xl md:text-4xl uppercase mb-1 cursor-default">
+          <h2 className="font-highlight font-semibold text-primaryColor text-xl md:text-4xl uppercase mb-1 cursor-default">
             Orações da igreja
           </h2>
           <p className="font-text mx-0 md:mx-9 text-xs font-semibold text-center cursor-default text-primaryColor">

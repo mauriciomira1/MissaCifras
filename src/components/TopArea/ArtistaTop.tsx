@@ -28,7 +28,7 @@ const ArtistaTop = (props: itemProps) => {
       </div>
 
       <div className="flex flex-col font-text right-0 end-0 mr-2">
-        <h2 className="text-right uppercase leading-5 font-highlight text-primaryColor text-xl cursor-pointer hover:text-secondaryColor">
+        <h2 className="text-right uppercase leading-5 font-highlight font-semibold text-primaryColor text-xl cursor-pointer hover:text-secondaryColor">
           {props.Author}
         </h2>
         <h3 className="text-right font-text hover:text-secondaryColor hover:font-bold text-gray-400 -mb-1 cursor-pointer text-sm">

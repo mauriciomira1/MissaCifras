@@ -10,8 +10,8 @@ import { FaArrowLeft } from "react-icons/fa";
 const Login = () => {
   return (
     <div className="bg-gradient-to-r from-[#1A3F78] to-[#EA9D9D] w-full h-screen flex-col md:flex-row flex items-center justify-center gap-6">
-      <div className="flex flex-col justify-center items-end">
-        <h1 className="font-highlight text-tertiaryColor text-5xl mb-2 text-center md:text-right">
+      <div className="flex flex-col justify-center md:items-end">
+        <h1 className="font-highlight font-semibold text-tertiaryColor text-5xl mb-2 text-center md:text-right">
           Nada do que é
           <br /> feito por amor
           <br /> é pequeno.

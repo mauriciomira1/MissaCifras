@@ -10,7 +10,7 @@ interface ItemMenuMobileProps {
 const ItemMenuMobile = ({ href, name }: ItemMenuMobileProps) => {
   return (
     <>
-      <li className="font-text text-white  active:text-tertiaryColor">
+      <li className="font-text text-white hover:text-tertiaryColor active:text-tertiaryColor">
         <Link href={href} className="py-6 uppercase">
           {name}
         </Link>

@@ -29,7 +29,7 @@ export const roboto = Roboto({
 
 // Fonte bolder, para títulos em destaque
 export const barlow = Barlow_Condensed({
-  weight: ["700", "800", "900"],
+  weight: ["400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
   variable: "--font-barlow",
 });

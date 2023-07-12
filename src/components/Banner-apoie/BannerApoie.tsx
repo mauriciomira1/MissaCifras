@@ -12,25 +12,25 @@ const BannerApoie = () => {
           className="object-cover scale-[250%] md:scale-150 lg:scale-110"
         />
       </div>
-      <div className="px-6 absolute flex items-center justify-between w-full">
-        <p className="leading-12 cursor-default text-3xl md:text-5xl text-white font-highlight">
+      <div className="md:px-6 px-3 relative flex items-center justify-between w-full">
+        <p className="leading-12 cursor-default text-3xl sm:text-5xl text-white font-semibold font-highlight">
           <span className="text-tertiaryColor">APOIE O</span>
           <br /> NOSSO
           <br />
           PROJETO
         </p>
-        <div className="flex flex-col items-center">
+        <div className="flex sm:mx-8 flex-col items-center">
           <p className="cursor-default text-lg text-tertiaryColor font-text font-black">
             Saiba como
           </p>
           <ButtonStyle01
-            className="bg-white text-tertiaryColor duration-150 hover:bg-primaryColor mt-1 font-"
+            className="bg-white font-semibold text-tertiaryColor duration-150 hover:bg-primaryColor mt-1"
             btnTitle="AJUDAR"
             textFont="font-highlight"
             texSize="text-3xl"
           />
         </div>
-        <div className="w-40"></div>
+        <div className=" w-20 md:w-40"></div>
       </div>
     </div>
   );

@@ -6,7 +6,7 @@ const QuemSomos = () => {
   return (
     <div className="flex flex-col w-full mt-8 items-center justify-center relative">
       <div className="flex items-center">
-        <h2 className="w-full leading-12 cursor-default text-5xl text-tertiaryColor font-highlight m-10">
+        <h2 className="w-full leading-12 font-semibold cursor-default text-5xl text-tertiaryColor font-highlight m-10">
           <span className="text-primaryColor">QUEM</span> SOMOS
         </h2>
       </div>
@@ -25,7 +25,7 @@ const QuemSomos = () => {
         <ButtonStyle01
           btnTitle="SAIBA MAIS"
           id="saiba-mais"
-          className="border-2 rounded border-primaryColor hover:bg-primaryColor hover:text-white duration-150"
+          className="border-2 font-bold rounded border-primaryColor hover:bg-primaryColor hover:text-white duration-150"
         />
       </div>
       <p className="absolute font-text font-semibold mb-4 leading-8 text-primaryColor start-2 bottom-0 w-full text-sm">

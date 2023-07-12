@@ -22,7 +22,7 @@ const Cadastro = () => {
         <FormularioCadastro />
       </div>
       <div className="flex flex-col justify-start">
-        <h1 className="font-highlight text-primaryColor md:text-left text-center text-5xl mb-2">
+        <h1 className="font-highlight font-semibold text-primaryColor md:text-left text-center text-5xl mb-2">
           Cantar é próprio
           <br /> de quem ama.
         </h1>
