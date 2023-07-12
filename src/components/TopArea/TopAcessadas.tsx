@@ -2,7 +2,7 @@ import MusicaTop from "./MusicaTop";
 
 const TopAcessadas = () => {
   return (
-    <div>
+    <div className="flex flex-col items-center lg:items-start">
       <h1 className="font-highlight font-bold uppercase text-4xl text-primaryColor mb-4">
         Mais acessadas
       </h1>

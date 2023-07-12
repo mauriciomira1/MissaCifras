@@ -7,7 +7,7 @@ export default function CoverMain() {
 
   return (
     <div className="w-full bg-black h-60 rounded-lg mb-2.5 flex relative justify-center items-center overflow-hidden">
-      <div className="absolute -bottom-80 w-full">
+      <div className="absolute lg:-bottom-80 w-full">
         <Image
           src={coverMainImg}
           alt={titleCoverMain}

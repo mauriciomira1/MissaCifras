@@ -9,11 +9,11 @@ const BannerApoie = () => {
         <Image
           src={BackgroundImage}
           alt="Apoie o nosso projeto"
-          className="object-cover scale-110"
+          className="object-cover scale-[250%] md:scale-150 lg:scale-110"
         />
       </div>
       <div className="px-6 absolute flex items-center justify-between w-full">
-        <p className="leading-12 cursor-default text-5xl text-white font-highlight">
+        <p className="leading-12 cursor-default text-3xl md:text-5xl text-white font-highlight">
           <span className="text-tertiaryColor">APOIE O</span>
           <br /> NOSSO
           <br />

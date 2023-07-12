@@ -10,7 +10,6 @@ import { useState } from "react";
 // Importando Ícones
 import searchIcon from "../../public/images/generic/search-icon.svg";
 import userIcon from "../../public/images/generic/user.svg";
-import { FiMenu } from "react-icons/fi";
 
 // Importando imagens
 import logo from "../../public/images/generic/logo.png";
@@ -18,39 +17,32 @@ import logoMobile from "../../public/images/generic/favicon.png";
 
 // Componentes
 import MenuMobile from "./MenuMobile";
+import ItemMenu from "./ItemMenu";
+import { FiMenu } from "react-icons/fi";
 
 interface MenuProps {
   pageSrc: string;
 }
 
 const Menu = () => {
-  const onClickMenuItem = ({ pageSrc }: MenuProps) => {};
-
   const [search, setSearch] = useState("");
-  const classNameFromItemsMenu =
-    "h-full px-2 hover:border-b-4 font-text font-bold border-primaryColor flex flex-wrap items-center justify-center gap-1 text-secondaryColor hover:text-primaryColor hover:cursor-pointer duration-100";
 
   return (
     <div className="flex flex-wrap px-3 h-16 border-b-1 shadow-md items-center justify-between">
       {/* Logotipo min-width: 1024px */}
-      <div className="hidden lg:block hover:opacity-60 cursor-pointer">
+      <div className="hidden xl:block hover:opacity-60 cursor-pointer">
         <Link href="/">
           <Image src={logo} alt="Logotipo" width={150} />
         </Link>
       </div>
-      {/* Menu sanduiche */}
-      <div className="lg:hidden">
-        <FiMenu className="text-2xl" />
-      </div>
-      <div className="w-64 absolute -ml-6 bg-primaryColor">
-        <MenuMobile />
-      </div>
+
       {/* Logotipo mobile */}
-      <div className="lg:hidden hover:opacity-60 cursor-pointer">
+      <div className="xl:hidden hover:opacity-60 ml-10 cursor-pointer">
         <Link href="/">
           <Image src={logoMobile} alt="Logotipo" width={50} />
         </Link>
       </div>
+
       {/* Barra de pesquisa */}
       <div className="w-64 lg:w-96">
         <label className="relative block">
@@ -68,34 +60,16 @@ const Menu = () => {
           />
         </label>
       </div>
+
       {/* Links de navegação no site */}
       <div className="hidden h-full xl:flex items-center">
         <ul className="flex flex-wrap items-center h-full font-semibold text-xs">
-          <li className={classNameFromItemsMenu}>
-            <Link href="/acordes" className="py-6">
-              ACORDES
-            </Link>
-          </li>
-          <li className={classNameFromItemsMenu}>
-            <Link href="/colabore" className="py-6">
-              COLABORE
-            </Link>
-          </li>
-          <li className={classNameFromItemsMenu}>
-            <Link href="/fale-conosco" className="py-6">
-              FALE CONOSCO
-            </Link>
-          </li>
-          <li className={classNameFromItemsMenu}>
-            <Link href="/enviar-cifra" className="py-6">
-              ENVIAR CIFRA
-            </Link>
-          </li>
-          <li className={classNameFromItemsMenu}>
-            <Link href="/login" className="py-6">
-              LOGIN
-            </Link>
-          </li>
+          <ItemMenu href="/" name="home" />
+          <ItemMenu href="/colabore" name="colabore" />
+          <ItemMenu href="/fale-conosco" name="fale conosco" />
+          <ItemMenu href="/enviar-cifra" name="enviar cifra" />
+          <ItemMenu href="/login" name="login" />
+
           <li className="h-8 flex font-text font-bold items-center justify-center text-white bg-secondaryColor px-2 rounded hover:bg-red-600 hover:cursor-pointer pr-3 pl-2 ml-2">
             <Link href="/cadastro" className="flex items-center">
               <Image src={userIcon} alt="Usuário" />

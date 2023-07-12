@@ -4,8 +4,8 @@ import MenuLateral from "./MenuLateral";
 const Dashboard = () => {
   return (
     <div className="w-full flex h-screen">
-      <div className="bg-primaryColor flex flex-col justify-start items-center h-full w-64 pl-2 pr-5">
-        <h1 className="text-white font-semibold font-text text-xl py-4 uppercase mt-3">
+      <div className="bg-primaryColor shadow-lg shadow-gray-800 flex flex-col justify-start items-center h-full w-12 pt-4 md:pt-1 md:w-64 md:pl-2 md:pr-5">
+        <h1 className="hidden md:block text-white font-semibold font-text text-xl py-4 uppercase mt-3">
           Dashboard
         </h1>
         <MenuLateral />

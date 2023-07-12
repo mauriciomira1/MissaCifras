@@ -4,7 +4,7 @@ import Artist01 from "../../public/images/artists/missionario-shalom.jpg";
 
 const TopArtistas = () => {
   return (
-    <div>
+    <div className="flex flex-col items-center md:items-end">
       <h1 className="text-right font-highlight font-bold uppercase text-4xl text-primaryColor mb-4">
         TOP ARTISTAS
       </h1>

@@ -68,7 +68,7 @@ const FormularioCadastro = () => {
 
   return (
     <form
-      className="w-[26rem] rounded-xl bg-white py-8 px-10 flex flex-col justify-center items-center"
+      className="md:w-[26rem] w-[93vw] rounded-xl bg-white py-8 px-10 flex flex-col justify-center items-center"
       onSubmit={handleSubmit(createUser)}
     >
       <Image src={SiteLogo} alt="Missa Cifras" width={160} />
@@ -88,7 +88,7 @@ const FormularioCadastro = () => {
         Cadastrar com Google
       </button>
 
-      <div className="flex flex-col my-1.5 mt-4 w-full">
+      {/*       <div className="flex flex-col my-1.5 mt-4 w-full">
         <label
           htmlFor="fullname"
           className="font-text text-xs text-primaryColor font-bold"
@@ -171,7 +171,7 @@ const FormularioCadastro = () => {
         >
           Cadastrar
         </button>
-      </div>
+      </div> */}
       <p className="font-text font-semibold text-sm mt-3 text-primaryColor cursor-default">
         Já tem cadastro?
         <Link

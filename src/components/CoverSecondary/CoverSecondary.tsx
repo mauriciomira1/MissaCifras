@@ -1,13 +1,8 @@
-//CSS
-import styles from "./CoverSecondary.module.css";
-
-// Nextjs
-import Image from "next/image";
-
 // Importando imagens
 import cover01 from "../../public/images/home/cover01.jpg";
 import cover02 from "../../public/images/home/cover02.jpg";
 import cover03 from "../../public/images/home/cover03.jpg";
+import CoverSecondaryItem from "./CoverSecondaryItem";
 
 const CoverSecondary = () => {
   const title01 = "Palavras do Papa francisco";
@@ -20,35 +15,11 @@ const CoverSecondary = () => {
   return (
     <div
       /*       onClick={(address) => redirectLink("/palavras-do-papa")} */
-      className="flex flex-wrap justify-between max-w-[90rem] w-auto"
+      className="flex justify-between max-w-[90rem] w-auto gap-2"
     >
-      <div
-        className={`relative overflow-hidden rounded-lg cursor-pointer lg:h-36 ${styles.cover}`}
-      >
-        <Image
-          src={cover01}
-          alt={title01}
-          className="w-full  object-center transition-transform duration-300 bg-cover transform scale-100 hover:scale-105"
-        />
-      </div>
-      <div
-        className={`relative overflow-hidden rounded-lg cursor-pointer lg:h-36 ${styles.cover}`}
-      >
-        <Image
-          src={cover02}
-          alt={title02}
-          className="absolute w-full -bottom-10 transition-transform duration-300 transform scale-100 hover:scale-105"
-        />
-      </div>
-      <div
-        className={`relative w-[400] overflow-hidden rounded-lg cursor-pointer lg:h-36 ${styles.cover}`}
-      >
-        <Image
-          src={cover03}
-          alt={title03}
-          className="transition-transform duration-300 transform scale-100 hover:scale-105"
-        />
-      </div>
+      <CoverSecondaryItem cover01={cover01} title01={title01} />
+      <CoverSecondaryItem cover01={cover02} title01={title02} />
+      <CoverSecondaryItem cover01={cover03} title01={title03} />
     </div>
   );
 };

@@ -55,7 +55,7 @@ const FormularioLogin = () => {
 
   return (
     <form
-      className="w-[26rem] rounded-xl bg-white py-8 px-10 flex flex-col justify-center items-center"
+      className="md:w-[26rem] w-[93vw] rounded-xl bg-white py-8 px-10 flex flex-col justify-center items-center"
       onSubmit={handleSubmit(createUser)}
     >
       <Image src={SiteLogo} alt="Missa Cifras" width={160} />
@@ -75,7 +75,7 @@ const FormularioLogin = () => {
         Login com Google
       </button>
 
-      <div className="flex flex-col my-1.5 w-full">
+      {/*       <div className="flex flex-col my-1.5 w-full">
         <label className="font-text text-xs text-primaryColor font-bold">
           E-mail
         </label>
@@ -111,14 +111,14 @@ const FormularioLogin = () => {
         >
           Login
         </button>
-      </div>
+      </div> */}
 
-      <Link
+      {/*       <Link
         href="/pages/cadastro"
         className="text-secondaryColor font-semibold pt-3 hover:text-orange-800 ml-1"
       >
         Esqueceu a senha?
-      </Link>
+      </Link> */}
     </form>
   );
 };

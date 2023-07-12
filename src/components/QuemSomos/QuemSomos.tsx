@@ -10,8 +10,8 @@ const QuemSomos = () => {
           <span className="text-primaryColor">QUEM</span> SOMOS
         </h2>
       </div>
-      <div className="flex flex-col w-full items-start mb-56 ml-6">
-        <p className="max-w-xl font-text font-semibold mb-4 leading-8 text-primaryColor">
+      <div className="flex flex-col w-full items-start mb-56 ml-3 md:ml-6">
+        <p className="max-w-xl w-11/12 md:w-full text-sm md:text-base font-text font-semibold mb-4 md:leading-8 text-primaryColor">
           Nós somos músicos do Ministério de Música Coração da Mãe e
           profissionais da área de tecnologia da informação. Há mais de uma
           década, tocamos em missas na Paróquia São Sebastião do Gama, em

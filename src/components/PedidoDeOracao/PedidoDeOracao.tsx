@@ -1,5 +1,3 @@
-import Formulario from "../Formulario";
-
 const PedidoDeOracao = () => {
   return (
     <>
