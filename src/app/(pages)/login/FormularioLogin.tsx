@@ -55,7 +55,7 @@ const FormularioLogin = () => {
 
   return (
     <form
-      className="md:w-[26rem] w-[93vw] rounded-xl bg-white py-8 px-10 flex flex-col justify-center items-center"
+      className="md:w-[26rem] w-96 max-w-md rounded-xl bg-white py-8 px-10 flex flex-col justify-center items-center"
       onSubmit={handleSubmit(createUser)}
     >
       <Image src={SiteLogo} alt="Missa Cifras" width={160} />

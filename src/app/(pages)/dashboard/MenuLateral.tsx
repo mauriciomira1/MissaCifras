@@ -6,9 +6,21 @@ const MenuLateral = () => {
   return (
     <nav>
       {/*       <ItemMenuLateral href="#" icon={BiUser} name="Meus dados" /> */}
-      <ItemMenuLateral href="#" icon={BiSolidPlaylist} name="Playlists" />
-      <ItemMenuLateral href="#" icon={FiSend} name="Cifras enviadas" />
-      <ItemMenuLateral href="#" icon={BiEdit} name="Enviar Cifra" />
+      <ItemMenuLateral
+        href="/dashboard/playlists"
+        icon={BiSolidPlaylist}
+        name="Playlists"
+      />
+      <ItemMenuLateral
+        href="/dashboard/minhas-colaboracoes"
+        icon={FiSend}
+        name="Cifras enviadas"
+      />
+      <ItemMenuLateral
+        href="/dashboard/enviar-cifra"
+        icon={BiEdit}
+        name="Enviar Cifra"
+      />
     </nav>
   );
 };
