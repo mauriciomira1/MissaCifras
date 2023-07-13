@@ -1,17 +1,20 @@
-import { ChangeEventHandler, MouseEventHandler } from "react";
+import { ChangeEventHandler, ForwardedRef, MouseEventHandler } from "react";
 
 interface InputDataProps {
   placeholder: string;
+  type?: string | "text";
+  name?: string;
   onChange?: ChangeEventHandler;
 }
 
-const InputData = ({ placeholder, onChange }: InputDataProps) => {
+const InputData = ({ placeholder, type, name, onChange }: InputDataProps) => {
   return (
     <input
-      type="text"
+      type={type}
       placeholder={placeholder}
+      name={name}
       onChange={onChange}
-      className="w-full rounded bg-gray-100 h-8 px-2"
+      className="w-full rounded items-center bg-gray-300 h-8 px-2 placeholder:text-sm"
     />
   );
 };

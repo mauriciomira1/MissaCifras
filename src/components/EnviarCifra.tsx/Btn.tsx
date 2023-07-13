@@ -10,7 +10,7 @@ const Btn = ({ name, onClick }: BtnProps) => {
   if (name === "PRÓXIMO") {
     Colors = "bg-primaryColor text-white";
   } else {
-    Colors = "bg-gray-200 text-black";
+    Colors = "bg-gray-300 text-black";
   }
 
   return (

@@ -5,7 +5,7 @@ import React from "react";
 const getData = async () => {
   // Usando "npm i -g http-server" + comando "http-server" dentro da pasta do arquivo .json
   const res = await fetch(
-    "http://10.190.102.22:8080/manda-teus-anjos-anjos-de-resgate.json"
+    "http://127.0.0.1:8080/manda-teus-anjos-anjos-de-resgate.json"
   );
   if (!res.ok) {
     throw new Error("Fetch data falhou!");

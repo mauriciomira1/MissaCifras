@@ -1,5 +1,3 @@
-import { ElementType } from "react";
-
 interface FormularioProps {
   src: string;
   text: string;
