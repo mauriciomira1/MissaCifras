@@ -35,7 +35,7 @@ const EnviarCifra = () => {
   const renderDaEtapaAtual = () => {
     switch (etapaAtual) {
       case 0:
-        return <Etapa01 songData={createSong} />;
+        return <Etapa01 />;
 
       case 1:
         return <Etapa02 />;
