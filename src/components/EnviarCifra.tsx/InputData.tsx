@@ -21,7 +21,7 @@ const InputData = ({
       placeholder={placeholder}
       name={name}
       onChange={onChange}
-      className="w-full rounded items-center bg-gray-300 h-8 px-2 placeholder:text-sm"
+      className="w-full rounded items-center focus:bg-white bg-gray-200 h-8 px-2 placeholder:text-sm"
       value={value}
     />
   );
