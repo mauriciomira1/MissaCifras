@@ -27,7 +27,7 @@ Este projeto usa next/font para otimizar e carregar automaticamente as fontes qu
 3) Javascript
 4) Tailwindcss
 5) Figma para criação da UI
-6) Pesquisa para análise de UX
+6) Pesquisa com músicos para análise de UX
 
 ## Conclusão
 Esse é um site que está sendo criado para fins de portifólio e publicação na internet e serão criadas todas as páginas, aplicados Login com o Google, Pesquisa, filtros e músicas e artistas, etc.
