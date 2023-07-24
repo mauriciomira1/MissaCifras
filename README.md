@@ -1,24 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Projeto em andamento
+Este é um site de Cifras de músicas exclusivamente Católicas utilizando Typescript e React, com NextJs.
 
-## Getting Started
+## Introdução
 
-First, run the development server:
-
-```bash
+Primeiro, execute o servidor de desenvolvimento:
+```
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra http://localhost:3000 com seu navegador para ver o resultado.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Este projeto usa next/font para otimizar e carregar automaticamente as fontes que selecionei para o site, provenientes do Google Fonts.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
+## Ferramentas utilizadas
+1) NextJS
+2) React
+3) Tailwindcss
+4) Figma para criação da UI
+5) Pesquisa para análise de UX
+6) 
 
 To learn more about Next.js, take a look at the following resources:
 
