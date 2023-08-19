@@ -1,5 +1,9 @@
 const EnviarCifra = () => {
-  return <div>EnviarCifra</div>;
+  return (
+    <div>
+      <h1>EnviarCifra</h1>
+    </div>
+  );
 };
 
 export default EnviarCifra;
