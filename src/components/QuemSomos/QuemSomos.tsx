@@ -36,7 +36,7 @@ const QuemSomos = () => {
         src={igreja}
         alt="Catedral"
         width={550}
-        className="absolute opacity-10 end-0 bottom-6"
+        className="absolute opacity-5 md:opacity-10 end-0 bottom-6"
       />
     </div>
   );

@@ -12,7 +12,7 @@ const BannerApoie = () => {
           className="object-cover scale-[250%] md:scale-150 lg:scale-110"
         />
       </div>
-      <div className="md:px-6 px-3 relative flex items-center justify-between w-full">
+      <div className="md:px-6 px-3 relative flex items-center justify-around md:justify-around w-full">
         <p className="leading-12 cursor-default text-3xl sm:text-5xl text-white font-semibold font-highlight">
           <span className="text-tertiaryColor">APOIE O</span>
           <br /> NOSSO
@@ -30,7 +30,7 @@ const BannerApoie = () => {
             texSize="text-3xl"
           />
         </div>
-        <div className=" w-20 md:w-40"></div>
+        <div className="w-0 sm:w-20 md:w-40"></div>
       </div>
     </div>
   );

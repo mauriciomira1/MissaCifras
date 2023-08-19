@@ -37,14 +37,14 @@ const Menu = () => {
       </div>
 
       {/* Logotipo mobile */}
-      <div className="xl:hidden hover:opacity-60 ml-10 cursor-pointer">
+      <div className="xl:hidden hover:opacity-60 ml-8 cursor-pointer">
         <Link href="/">
-          <Image src={logoMobile} alt="Logotipo" width={50} />
+          <Image src={logoMobile} alt="Logotipo" width={40} />
         </Link>
       </div>
 
       {/* Barra de pesquisa */}
-      <div className="w-64 lg:w-96">
+      <div className="w-52 sm:w-64 lg:w-96">
         <label className="relative block">
           <span className="sr-only">Search</span>
           <span className="absolute inset-y-0 left-0 flex items-center pl-2">
