@@ -9,9 +9,9 @@ import { FaArrowLeft } from "react-icons/fa";
 
 const Login = () => {
   return (
-    <div className="bg-gradient-to-r from-[#1A3F78] to-[#EA9D9D] w-full h-screen flex-col md:flex-row flex items-center justify-center gap-6">
+    <div className="bg-gradient-to-r from-[#1A3F78] to-[#EA9D9D] w-full h-screen flex-col md:flex-row flex items-center justify-start sm:justify-center gap-6">
       <div className="flex flex-col justify-center md:items-end">
-        <h1 className="font-highlight font-semibold text-tertiaryColor text-5xl mb-2 text-center md:text-right">
+        <h1 className="font-highlight font-semibold text-tertiaryColor text-3xl md:text-5xl max-sm:mt-12 mb-2 text-center md:text-right">
           Nada do que é
           <br /> feito por amor
           <br /> é pequeno.
@@ -19,7 +19,7 @@ const Login = () => {
         <cite className="italic text-white text-xs">
           Santa Terezinha do Menino Jesus
         </cite>
-        <p className="text-white font-text font-semibold text-sm w-72 mt-6 text-center md:text-right">
+        <p className="text-white font-text font-semibold text-sm w-72 mt-6 text-center max-sm: py-6 md:text-right">
           Faça login na nossa plataforma e venha evangelizar através da música.
         </p>
       </div>

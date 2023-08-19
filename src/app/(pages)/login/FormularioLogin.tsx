@@ -7,12 +7,6 @@ import SiteLogo from "../../../public/images/generic/logo.png";
 // Ícones
 import { FcGoogle } from "react-icons/fc";
 
-// CSS
-import styles from "./FormularioLogin.module.css";
-
-// Hooks do next
-import Link from "next/link";
-
 // Hooks de formulário
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -55,7 +49,7 @@ const FormularioLogin = () => {
 
   return (
     <form
-      className="md:w-[26rem] w-96 max-w-md rounded-xl bg-white py-8 px-10 flex flex-col justify-center items-center"
+      className="md:w-[26rem] w-10/12 sm:w-96 max-w-md rounded-xl bg-white py-8 px-10 flex flex-col justify-center items-center"
       onSubmit={handleSubmit(createUser)}
     >
       <Image src={SiteLogo} alt="Missa Cifras" width={160} />
@@ -64,7 +58,7 @@ const FormularioLogin = () => {
         Bem-vindo de volta!
       </h2>
 
-      <p className="font-text font-semibold text-xs text-gray-400 mb-5 mx-6 text-center">
+      <p className="font-text font-semibold text-xs text-gray-400 mb-5 sm:mx-6 text-center">
         Venha e levar a nossa santa música a todos os cantos do nosso país.
       </p>
 

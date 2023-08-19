@@ -68,7 +68,7 @@ const FormularioCadastro = () => {
 
   return (
     <form
-      className="md:w-[26rem] w-96 max-w-7xl rounded-xl bg-white py-8 px-10 flex flex-col justify-center items-center"
+      className="md:w-[26rem] sm:w-96 max-w-7xl rounded-xl bg-white py-8 px-10 flex flex-col justify-center items-center max-sm:px-2 w-10/12"
       onSubmit={handleSubmit(createUser)}
     >
       <Image src={SiteLogo} alt="Missa Cifras" width={160} />
@@ -81,7 +81,7 @@ const FormularioCadastro = () => {
         Cadastre-se <strong>grátis</strong> e seja um evangelizador
       </p>
 
-      <button className="duration-150 w-full py-1.5 font-text text-sm font-semibold flex items-center justify-center gap-2 bg-white border rounded border-gray-300 hover:bg-gray-200 hover:border-gray-40000 active:bg-gray-300">
+      <button className="duration-150 w-11/12 py-1.5 font-text text-sm font-semibold flex items-center justify-center gap-2 bg-white border rounded border-gray-300 hover:bg-gray-200 hover:border-gray-40000 active:bg-gray-300">
         <span className="text-lg">
           <FcGoogle />
         </span>
