@@ -1,7 +1,7 @@
 const Welcome = () => {
   return (
     <div className="flex flex-col w-full items-center p-4">
-      <h1 className="font-highlight font-semibold text-7xl my-8 text-secondaryColor">
+      <h1 className="font-highlight font-semibold text-5xl sm:text-7xl my-8 text-secondaryColor">
         Bem-vindo
       </h1>
       <div className="flex flex-col items-center font-text font-bold">

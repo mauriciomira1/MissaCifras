@@ -4,12 +4,10 @@ import Etapa02 from "@/components/EnviarCifra.tsx/Etapa02";
 import Etapa03 from "@/components/EnviarCifra.tsx/Etapa03";
 import Etapa04 from "@/components/EnviarCifra.tsx/Etapa04";
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { z } from "zod";
 
 const EnviarCifra = () => {
   const [etapaAtual, setEtapaAtual] = useState(0);
-  const [btnState, setBtnState] = useState();
+  const [btnState, setBtnState] = useState(true);
 
   const createSong = (data: any) => {
     console.log(data);
@@ -25,11 +23,19 @@ const EnviarCifra = () => {
   const btnProximo = (ev: React.FormEvent) => {
     ev.preventDefault();
     setEtapaAtual((etapaAtual) => etapaAtual + 1);
+    console.log(etapaAtual);
+    if (etapaAtual === 2) {
+      setBtnState(false);
+    }
   };
-
+  console.log(etapaAtual);
   const btnAnterior = (ev: React.FormEvent) => {
     ev.preventDefault();
     setEtapaAtual((etapaAtual) => etapaAtual - 1);
+    console.log(etapaAtual);
+    if (etapaAtual < 4) {
+      setBtnState(true);
+    }
   };
 
   const renderDaEtapaAtual = () => {
@@ -72,8 +78,17 @@ const EnviarCifra = () => {
       </div>
       <div className="w-full">{renderDaEtapaAtual()}</div>
       <div className="flex justify-between w-full">
-        <Btn name="ANTERIOR" onClick={btnAnterior} />
-        <Btn name="PRÓXIMO" onClick={btnProximo} />
+        {etapaAtual === 0 ? (
+          <div></div>
+        ) : (
+          <Btn name="ANTERIOR" id="btnAnterior" onClick={btnAnterior} />
+        )}
+
+        {btnState === true ? (
+          <Btn name="PRÓXIMO" id="btnProximo" onClick={btnProximo} />
+        ) : (
+          <Btn name="ENVIAR" id="Enviar" />
+        )}
       </div>
     </form>
   );

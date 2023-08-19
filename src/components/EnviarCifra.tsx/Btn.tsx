@@ -1,14 +1,17 @@
 import { MouseEventHandler } from "react";
 
 interface BtnProps {
-  name: "PRÓXIMO" | "ANTERIOR";
+  name: "PRÓXIMO" | "ANTERIOR" | "ENVIAR";
   onClick?: MouseEventHandler;
+  id: string;
 }
 
-const Btn = ({ name, onClick }: BtnProps) => {
+const Btn = ({ name, onClick, id }: BtnProps) => {
   let Colors = "";
   if (name === "PRÓXIMO") {
     Colors = "bg-primaryColor text-white";
+  } else if (name === "ENVIAR") {
+    Colors = "bg-green-700 text-white";
   } else {
     Colors = "bg-gray-300 text-black";
   }
