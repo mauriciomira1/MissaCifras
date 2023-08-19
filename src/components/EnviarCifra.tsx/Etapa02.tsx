@@ -7,8 +7,8 @@ const Etapa02 = () => {
       <textarea
         name=""
         id=""
-        cols="30"
-        rows="15"
+        cols={30}
+        rows={13}
         className="bg-gray-200 w-full rounded text-sm"
       ></textarea>
     </div>

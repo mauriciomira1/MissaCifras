@@ -23,7 +23,7 @@ const EnviarCifra = () => {
       setBtnState(false);
     }
   };
-  console.log(etapaAtual);
+
   const btnAnterior = (ev: React.FormEvent) => {
     ev.preventDefault();
     setEtapaAtual((etapaAtual) => etapaAtual - 1);
@@ -31,7 +31,6 @@ const EnviarCifra = () => {
       setBtnState(true);
     }
   };
-  console.log(etapaAtual);
 
   const renderDaEtapaAtual = () => {
     switch (etapaAtual) {
@@ -58,16 +57,44 @@ const EnviarCifra = () => {
         DASHBOARD
       </h1>
       <div className="flex justify-center gap-1 mt-2 mb-5 w-full">
-        <button className={selectedBtn} id="btn01">
+        <button
+          className={etapaAtual === 0 ? selectedBtn : inactiveBtn}
+          id="btn01"
+          onClick={(ev) => {
+            ev.preventDefault();
+            setEtapaAtual(0);
+          }}
+        >
           1
         </button>
-        <button className={inactiveBtn} id="btn02">
+        <button
+          className={etapaAtual === 1 ? selectedBtn : inactiveBtn}
+          id="btn02"
+          onClick={(ev) => {
+            ev.preventDefault();
+            setEtapaAtual(1);
+          }}
+        >
           2
         </button>
-        <button className={inactiveBtn} id="btn03">
+        <button
+          className={etapaAtual === 2 ? selectedBtn : inactiveBtn}
+          id="btn03"
+          onClick={(ev) => {
+            ev.preventDefault();
+            setEtapaAtual(2);
+          }}
+        >
           3
         </button>
-        <button className={inactiveBtn} id="btn04">
+        <button
+          className={etapaAtual === 3 ? selectedBtn : inactiveBtn}
+          id="btn04"
+          onClick={(ev) => {
+            ev.preventDefault();
+            setEtapaAtual(3);
+          }}
+        >
           4
         </button>
       </div>
