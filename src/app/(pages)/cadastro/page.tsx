@@ -22,12 +22,12 @@ const Cadastro = () => {
         <FormularioCadastro />
       </div>
       <div className="flex flex-col justify-start">
-        <h1 className="font-highlight font-semibold text-primaryColor md:text-left text-center text-5xl mb-2">
+        <h1 className="font-highlight font-semibold text-primaryColor md:text-left text-center text-4xl sm:text-5xl mb-2">
           Cantar é próprio
           <br /> de quem ama.
         </h1>
         <cite className="italic text-white text-xs">Santo Agostinho</cite>
-        <p className="text-white font-text font-semibold text-sm w-72 mt-16 md:text-left text-center">
+        <p className="text-white font-text font-semibold text-sm w-72 mt-10 sm:mt-16 md:text-left text-center">
           Cadastre-se e{" "}
           <span className="text-primaryColor">faça parte do nosso time </span>
           de evangelização através da música católica.
