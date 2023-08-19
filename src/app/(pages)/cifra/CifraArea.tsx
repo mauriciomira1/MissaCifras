@@ -4,8 +4,6 @@ import Link from "next/link";
 import React from "react";
 import cifra from "@/api/cifras/manda-teus-anjos-anjos-de-resgate.json";
 
-// Usando "npm i -g http-server" + comando "http-server" dentro da pasta do arquivo .json
-
 const CifraArea = () => {
   return (
     <div className="font-cifra">
@@ -24,7 +22,7 @@ const CifraArea = () => {
         Tom: <span className="font-bold text-secondaryColor">{cifra.tom}</span>
       </p>
       <p>
-        Tempo: <span className="font-bold">{cifra.tempo} BPM</span>
+        Tempo: <span className="font-bold">{cifra.bpm} BPM</span>
       </p>
       <br />
 

@@ -9,10 +9,6 @@ const EnviarCifra = () => {
   const [etapaAtual, setEtapaAtual] = useState(0);
   const [btnState, setBtnState] = useState(true);
 
-  const createSong = (data: any) => {
-    console.log(data);
-  };
-
   const selectedBtn =
     "font-text text-green-400 text-xl align-middle font-bold border-2 border-green-400 rounded-md h-8 w-8";
   const activeBtn =
@@ -23,7 +19,6 @@ const EnviarCifra = () => {
   const btnProximo = (ev: React.FormEvent) => {
     ev.preventDefault();
     setEtapaAtual((etapaAtual) => etapaAtual + 1);
-    console.log(etapaAtual);
     if (etapaAtual === 2) {
       setBtnState(false);
     }
@@ -32,11 +27,11 @@ const EnviarCifra = () => {
   const btnAnterior = (ev: React.FormEvent) => {
     ev.preventDefault();
     setEtapaAtual((etapaAtual) => etapaAtual - 1);
-    console.log(etapaAtual);
     if (etapaAtual < 4) {
       setBtnState(true);
     }
   };
+  console.log(etapaAtual);
 
   const renderDaEtapaAtual = () => {
     switch (etapaAtual) {

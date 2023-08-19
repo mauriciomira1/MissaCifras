@@ -70,7 +70,6 @@ const Etapa01 = () => {
       />
     </div>
   );
-  return songData;
 };
 
 export default Etapa01;
