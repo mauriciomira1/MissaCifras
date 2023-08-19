@@ -9,7 +9,7 @@ const Etapa02 = () => {
         id=""
         cols={30}
         rows={13}
-        className="bg-gray-200 w-full rounded text-sm"
+        className="bg-gray-200 w-full rounded text-sm lg:h-[40rem]"
       ></textarea>
     </div>
   );

@@ -14,6 +14,7 @@ interface songDataProps {
   hashtags: string;
   momentoDaMissa: string;
   qtdDeCliques: number;
+  userWhoSent: string;
 }
 interface ContextNewMusicProps {
   songData: songDataProps;

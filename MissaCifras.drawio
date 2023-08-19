@@ -1,11 +1,11 @@
 <mxfile host="65bd71144e">
     <diagram name="Página-1" id="KAvhJZG7qQ8N-uu_cvAz">
-        <mxGraphModel dx="96" dy="586" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="678" dy="586" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
                 <mxCell id="r4SKTvl0sljqAjaJuwJ4-2" value="Cifra" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="170" y="120" width="160" height="450" as="geometry"/>
+                    <mxGeometry x="170" y="120" width="160" height="480" as="geometry"/>
                 </mxCell>
                 <mxCell id="r4SKTvl0sljqAjaJuwJ4-3" value="id (String) [Primary Key]" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="r4SKTvl0sljqAjaJuwJ4-2" vertex="1">
                     <mxGeometry y="30" width="160" height="30" as="geometry"/>
@@ -13,13 +13,13 @@
                 <mxCell id="r4SKTvl0sljqAjaJuwJ4-9" value="musica (String)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="r4SKTvl0sljqAjaJuwJ4-2" vertex="1">
                     <mxGeometry y="60" width="160" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="3" value="versao (String)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="r4SKTvl0sljqAjaJuwJ4-2">
+                <mxCell id="3" value="versao (String)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="r4SKTvl0sljqAjaJuwJ4-2" vertex="1">
                     <mxGeometry y="90" width="160" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="r4SKTvl0sljqAjaJuwJ4-4" value="cantor (String[])" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="r4SKTvl0sljqAjaJuwJ4-2" vertex="1">
                     <mxGeometry y="120" width="160" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="2" value="compositor (String[])" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="r4SKTvl0sljqAjaJuwJ4-2">
+                <mxCell id="2" value="compositor (String[])" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="r4SKTvl0sljqAjaJuwJ4-2" vertex="1">
                     <mxGeometry y="150" width="160" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="r4SKTvl0sljqAjaJuwJ4-7" value="tom (String)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="r4SKTvl0sljqAjaJuwJ4-2" vertex="1">
@@ -31,7 +31,7 @@
                 <mxCell id="r4SKTvl0sljqAjaJuwJ4-11" value="video (String)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="r4SKTvl0sljqAjaJuwJ4-2" vertex="1">
                     <mxGeometry y="240" width="160" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="5" value="letra (String)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="r4SKTvl0sljqAjaJuwJ4-2">
+                <mxCell id="5" value="letra (String)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="r4SKTvl0sljqAjaJuwJ4-2" vertex="1">
                     <mxGeometry y="270" width="160" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="r4SKTvl0sljqAjaJuwJ4-8" value="cifra (String)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="r4SKTvl0sljqAjaJuwJ4-2" vertex="1">
@@ -48,6 +48,9 @@
                 </mxCell>
                 <mxCell id="r4SKTvl0sljqAjaJuwJ4-13" value="acordes (String[])" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" parent="r4SKTvl0sljqAjaJuwJ4-2" vertex="1">
                     <mxGeometry y="420" width="160" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="userWhoSent (String)" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;whiteSpace=wrap;html=1;" vertex="1" parent="r4SKTvl0sljqAjaJuwJ4-2">
+                    <mxGeometry y="450" width="160" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="r4SKTvl0sljqAjaJuwJ4-6" value="Postgres" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
                     <mxGeometry x="90" y="120" width="60" height="80" as="geometry"/>
