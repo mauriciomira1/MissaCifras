@@ -28,7 +28,8 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/app/loading/loading.tsx"
+    "src/app/loading/loading.tsx",
+    "src/app/(pages)/api/cifra/staticdata.js"
   ],
   "exclude": ["node_modules"]
 }

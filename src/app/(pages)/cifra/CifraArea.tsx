@@ -1,21 +1,12 @@
+"use client";
 import Cifra from "@/components/Cifra/Cifra";
 import Link from "next/link";
 import React from "react";
+import cifra from "@/api/cifras/manda-teus-anjos-anjos-de-resgate.json";
 
-const getData = async () => {
-  // Usando "npm i -g http-server" + comando "http-server" dentro da pasta do arquivo .json
-  const res = await fetch(
-    "http://127.0.0.1:8080/manda-teus-anjos-anjos-de-resgate.json"
-  );
-  if (!res.ok) {
-    throw new Error("Fetch data falhou!");
-  }
-  return res.json();
-};
+// Usando "npm i -g http-server" + comando "http-server" dentro da pasta do arquivo .json
 
-const CifraArea = async () => {
-  const cifra = await getData();
-
+const CifraArea = () => {
   return (
     <div className="font-cifra">
       <h1 className="font-text font-bold text-primaryColor text-3xl">
