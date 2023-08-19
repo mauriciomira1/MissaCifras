@@ -25,7 +25,7 @@ const QuemSomos = () => {
         <ButtonStyle01
           btnTitle="SAIBA MAIS"
           id="saiba-mais"
-          className="border-2 font-bold rounded border-primaryColor hover:bg-primaryColor hover:text-white duration-150 active:text-white active:bg-primaryColor"
+          className="border-2 font-bold rounded border-primaryColor hover:bg-primaryColor hover:text-white active:bg-primaryColor active:text-white"
         />
       </div>
       <p className="absolute font-text font-semibold mb-4 leading-8 text-primaryColor start-2 bottom-0 w-full text-sm">
