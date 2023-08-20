@@ -1,7 +1,36 @@
 "use client";
-import { ReactNode, createContext, useContext, useState } from "react";
+import {
+  Dispatch,
+  ReactNode,
+  SetStateAction,
+  createContext,
+  useContext,
+  useState,
+} from "react";
 
-interface songDataProps {
+interface SongDataProps {
+  id?: number;
+  musica: string;
+  versao: string;
+  cantor: string;
+  compositor: string;
+  tom: string;
+  bpm: number;
+  video: string;
+  hashtags: string;
+  momentoDaMissa: string;
+  qtdDeCliques?: number;
+  userWhoSent?: string;
+}
+
+interface LetraProps {
+  letra: string;
+}
+interface CifraProps {
+  cifra: string;
+}
+
+interface ListSongsProps {
   id: number;
   musica: string;
   versao: string;
@@ -10,17 +39,22 @@ interface songDataProps {
   tom: string;
   bpm: number;
   video: string;
-  letra: string;
-  cifra: string;
   hashtags: string;
   momentoDaMissa: string;
   qtdDeCliques: number;
   userWhoSent: string;
+  letra: LetraProps;
+  cifra: CifraProps;
 }
+
 interface ContextNewMusicProps {
-  songData: songDataProps;
-  listSongs: songDataProps[];
-  Etapa01: (data: songDataProps) => void;
+  setSongData: Dispatch<SetStateAction<SongDataProps>>;
+  setLetra: Dispatch<SetStateAction<LetraProps>>;
+  setCifra: Dispatch<SetStateAction<CifraProps>>;
+  songData: SongDataProps;
+  letra: LetraProps;
+  cifra: CifraProps;
+  Etapa01: (data: SongDataProps) => void;
   Etapa02: (data: string) => void;
 }
 
@@ -29,13 +63,14 @@ const ContextNewMusic = createContext<ContextNewMusicProps>(
 );
 
 export const NewMusicContextProvider = (props: { children: ReactNode }) => {
-  const [songData, setSongData] = useState({} as songDataProps);
-  const [listSongs, setListSongs] = useState([{} as songDataProps]);
+  const [songData, setSongData] = useState({} as SongDataProps);
+  const [listSongs, setListSongs] = useState([{} as ListSongsProps]);
+  const [letra, setLetra] = useState<LetraProps>({} as LetraProps);
+  const [cifra, setCifra] = useState<CifraProps>({} as CifraProps);
 
-  const Etapa01 = (data: songDataProps) => {
+  const Etapa01 = (data: SongDataProps) => {
     setSongData((prevState) => ({
       ...prevState,
-      id: Math.floor(Math.random() * 1000000000),
       musica: data.musica,
       versao: data.versao,
       cantor: data.cantor,
@@ -43,7 +78,10 @@ export const NewMusicContextProvider = (props: { children: ReactNode }) => {
       tom: data.tom,
       bpm: data.bpm,
       video: data.video,
+      hashtags: data.hashtags,
+      momentoDaMissa: data.momentoDaMissa,
     }));
+    console.log(songData);
   };
 
   const Etapa02 = (data: string) => {
@@ -54,7 +92,18 @@ export const NewMusicContextProvider = (props: { children: ReactNode }) => {
   };
 
   return (
-    <ContextNewMusic.Provider value={{ songData, listSongs, Etapa01, Etapa02 }}>
+    <ContextNewMusic.Provider
+      value={{
+        setSongData,
+        setLetra,
+        setCifra,
+        songData,
+        letra,
+        cifra,
+        Etapa01,
+        Etapa02,
+      }}
+    >
       {props.children}
     </ContextNewMusic.Provider>
   );

@@ -1,8 +1,35 @@
+"use client";
 import { useState } from "react";
 import InputData from "./InputData";
+import { useNewMusic } from "@/contexts/useNewMusicContext";
+import { table } from "console";
+
+interface DataProps {
+  musica: string;
+  versao: string;
+  cantor: string;
+  compositor: string;
+  tom: string;
+  bpm: number;
+  video: string;
+  hashtags: string;
+  momentoDaMissa: string;
+}
 
 const Etapa01 = () => {
-  const [songData, setSongData] = useState({
+  const { Etapa01 } = useNewMusic();
+  const [data, setData] = useState<DataProps>({
+    musica: "",
+    versao: "",
+    cantor: "",
+    compositor: "",
+    tom: "",
+    bpm: 0,
+    video: "",
+    hashtags: "",
+    momentoDaMissa: "",
+  });
+  /*   const [songData, setSongData] = useState({
     musica: "",
     versao: "",
     cantor: "",
@@ -10,12 +37,13 @@ const Etapa01 = () => {
     tom: "",
     bpm: "",
     video: "",
-  });
+  }); */
 
   const handleChange = (ev: any) => {
     const { name, value } = ev.target;
-    setSongData((prevData) => ({ ...prevData, [name]: value }));
-    console.log(songData);
+    setData((prevData) => ({ ...prevData, [name]: value }));
+    Etapa01(data);
+    /* setSongData((prevData) => ({ ...prevData, data })); */
   };
 
   return (
@@ -27,46 +55,88 @@ const Etapa01 = () => {
         placeholder="Nome da música"
         name="musica"
         onChange={handleChange}
-        value={songData.musica}
+        value={data.musica}
       />
       <InputData
         placeholder="Versão (Ao Vivo em Brasília, Acústico, etc)"
         name="versao"
         onChange={handleChange}
-        value={songData.versao}
+        value={data.versao}
       />
       <InputData
         placeholder="Nome o cantor"
         name="cantor"
         onChange={handleChange}
-        value={songData.cantor}
+        value={data.cantor}
       />
       <InputData
         placeholder="Nome do compositor (opcional)"
         name="compositor"
         onChange={handleChange}
-        value={songData.compositor}
+        value={data.compositor}
       />
-      <InputData
-        placeholder="Tom da música"
-        name="tom"
+      <select
+        className="w-full rounded items-center focus:bg-white bg-gray-200 h-8 px-2 placeholder:text-sm text-gray-800 text-sm"
         onChange={handleChange}
-        value={songData.tom}
-      />
+        value={data.tom}
+        name="tom"
+      >
+        <option value="" disabled>
+          Tom da música
+        </option>
+        <option value="C">C</option>
+        <option value="C#">C#</option>
+        <option value="D">D</option>
+        <option value="D#">D#</option>
+        <option value="E">E</option>
+        <option value="F">F</option>
+        <option value="F#">F#</option>
+        <option value="G">G</option>
+        <option value="G#">G#</option>
+        <option value="A">A</option>
+        <option value="A#">A#</option>
+        <option value="B">B</option>
+      </select>
       <InputData
         placeholder="BPM (batimentos por minuto)"
         type="number"
         name="bpm"
         onChange={handleChange}
-        value={songData.bpm}
+        value={data.bpm}
       />
       <InputData
         placeholder="Vídeo do Youtube com a versão"
         type="url"
         name="video"
         onChange={handleChange}
-        value={songData.video}
+        value={data.video}
       />
+      <InputData
+        placeholder="Palavras-chave (Exemplo: maria, jesus, amor de pai, etc)"
+        name="hashtags"
+        onChange={handleChange}
+        value={data.hashtags}
+      />
+      <select
+        className="w-full rounded items-center focus:bg-white bg-gray-200 h-8 px-2 placeholder:text-sm text-gray-800 text-sm"
+        onChange={handleChange}
+        value={data.momentoDaMissa}
+        name="momentoDaMissa"
+      >
+        <option value="" disabled>
+          Selecione o momento da missa
+        </option>
+        <option value="entrada">Canto de entrada</option>
+        <option value="atoPenitencial">Ato Penitencial</option>
+        <option value="gloria">Glória</option>
+        <option value="aclamacao">Aclamação ao Evangelho</option>
+        <option value="ofertorio">Ofertório</option>
+        <option value="santo">Santo</option>
+        <option value="cordeiro">Cordeiro</option>
+        <option value="comunhao">Comunhão</option>
+        <option value="posComunhao">Pós Comunhão</option>
+        <option value="final">Final</option>
+      </select>
     </div>
   );
 };
