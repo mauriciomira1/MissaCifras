@@ -54,8 +54,8 @@ interface ContextNewMusicProps {
   songData: SongDataProps;
   letra: LetraProps;
   cifra: CifraProps;
-  Etapa01: (data: SongDataProps) => void;
-  Etapa02: (data: string) => void;
+  EtapaSong01: (data: SongDataProps) => void;
+  EtapaSong02: (data: string) => void;
 }
 
 const ContextNewMusic = createContext<ContextNewMusicProps>(
@@ -68,7 +68,7 @@ export const NewMusicContextProvider = (props: { children: ReactNode }) => {
   const [letra, setLetra] = useState<LetraProps>({} as LetraProps);
   const [cifra, setCifra] = useState<CifraProps>({} as CifraProps);
 
-  const Etapa01 = (data: SongDataProps) => {
+  const EtapaSong01 = (data: SongDataProps) => {
     setSongData((prevState) => ({
       ...prevState,
       musica: data.musica,
@@ -81,10 +81,9 @@ export const NewMusicContextProvider = (props: { children: ReactNode }) => {
       hashtags: data.hashtags,
       momentoDaMissa: data.momentoDaMissa,
     }));
-    console.log(songData);
   };
 
-  const Etapa02 = (data: string) => {
+  const EtapaSong02 = (data: string) => {
     setSongData((prevState) => ({
       ...prevState,
       letra: data,
@@ -100,8 +99,8 @@ export const NewMusicContextProvider = (props: { children: ReactNode }) => {
         songData,
         letra,
         cifra,
-        Etapa01,
-        Etapa02,
+        EtapaSong01,
+        EtapaSong02,
       }}
     >
       {props.children}

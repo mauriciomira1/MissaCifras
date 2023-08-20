@@ -2,7 +2,6 @@
 import { useState } from "react";
 import InputData from "./InputData";
 import { useNewMusic } from "@/contexts/useNewMusicContext";
-import { table } from "console";
 
 interface DataProps {
   musica: string;
@@ -17,33 +16,14 @@ interface DataProps {
 }
 
 const Etapa01 = () => {
-  const { Etapa01 } = useNewMusic();
-  const [data, setData] = useState<DataProps>({
-    musica: "",
-    versao: "",
-    cantor: "",
-    compositor: "",
-    tom: "",
-    bpm: 0,
-    video: "",
-    hashtags: "",
-    momentoDaMissa: "",
-  });
-  /*   const [songData, setSongData] = useState({
-    musica: "",
-    versao: "",
-    cantor: "",
-    compositor: "",
-    tom: "",
-    bpm: "",
-    video: "",
-  }); */
+  const { EtapaSong01 } = useNewMusic();
+  const [data, setData] = useState<DataProps>({} as DataProps);
+  console.log(data);
 
   const handleChange = (ev: any) => {
     const { name, value } = ev.target;
     setData((prevData) => ({ ...prevData, [name]: value }));
-    Etapa01(data);
-    /* setSongData((prevData) => ({ ...prevData, data })); */
+    EtapaSong01(data);
   };
 
   return (
