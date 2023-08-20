@@ -1,11 +1,12 @@
-import Btn from "@/components/EnviarCifra.tsx/Btn";
-import Etapa01 from "@/components/EnviarCifra.tsx/Etapa01";
-import Etapa02 from "@/components/EnviarCifra.tsx/Etapa02";
-import Etapa03 from "@/components/EnviarCifra.tsx/Etapa03";
-import Etapa04 from "@/components/EnviarCifra.tsx/Etapa04";
-import React, { useState } from "react";
+"use client";
+import Btn from "@/components/Dashboard/EnviarCifra/Btn";
+import Etapa01 from "@/components/Dashboard/EnviarCifra/Etapa01";
+import Etapa02 from "@/components/Dashboard/EnviarCifra/Etapa02";
+import Etapa03 from "@/components/Dashboard/EnviarCifra/Etapa03";
+import Etapa04 from "@/components/Dashboard/EnviarCifra/Etapa04";
+import { useState } from "react";
 
-const EnviarCifra = () => {
+const EnviarCifraComponent = () => {
   const [etapaAtual, setEtapaAtual] = useState(0);
   const [btnState, setBtnState] = useState(true);
 
@@ -52,8 +53,8 @@ const EnviarCifra = () => {
   };
 
   return (
-    <form className="flex flex-col w-11/12 gap-2 items-center my-6">
-      <h1 className="font-text text-4xl font-black text-primaryColor">
+    <form className="flex flex-col w-full gap-2 items-center my-6">
+      <h1 className="font-text text-2xl md:text-4xl font-black text-primaryColor">
         DASHBOARD
       </h1>
       <div className="flex justify-center gap-1 mt-2 mb-5 w-full">
@@ -116,4 +117,4 @@ const EnviarCifra = () => {
   );
 };
 
-export default EnviarCifra;
+export default EnviarCifraComponent;

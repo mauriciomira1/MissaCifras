@@ -1,18 +1,18 @@
-const Etapa03 = () => {
+const Etapa02 = () => {
   return (
     <div className="flex flex-col items-center gap-1.5">
       <h1 className="font-text text-primaryColor py-1 font-bold">
-        ETAPA 03 - CIFRA DA MÚSICA
+        ETAPA 02 - LETRA DA MÚSICA
       </h1>
       <textarea
         name=""
         id=""
         cols={30}
-        rows={13}
-        className="bg-gray-200 w-full rounded text-sm lg:h-[40rem]"
+        rows={18}
+        className="bg-gray-200 w-full rounded text-sm"
       ></textarea>
     </div>
   );
 };
 
-export default Etapa03;
+export default Etapa02;

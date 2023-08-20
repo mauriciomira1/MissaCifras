@@ -1,4 +1,5 @@
-import { ReactNode, createContext, useState } from "react";
+"use client";
+import { ReactNode, createContext, useContext, useState } from "react";
 
 interface songDataProps {
   id: number;
@@ -27,7 +28,7 @@ const ContextNewMusic = createContext<ContextNewMusicProps>(
   {} as ContextNewMusicProps
 );
 
-const useNewMusicContext = (props: { children: ReactNode }) => {
+export const NewMusicContextProvider = (props: { children: ReactNode }) => {
   const [songData, setSongData] = useState({} as songDataProps);
   const [listSongs, setListSongs] = useState([{} as songDataProps]);
 
@@ -59,4 +60,4 @@ const useNewMusicContext = (props: { children: ReactNode }) => {
   );
 };
 
-export default useNewMusicContext;
+export const useNewMusic = () => useContext(ContextNewMusic);

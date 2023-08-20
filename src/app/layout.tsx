@@ -1,6 +1,5 @@
 // ------ Components ------
 import Menu from "@/components/Menu/Menu";
-import Submenu from "@/components/Submenu/Submenu";
 
 // ------ CSS global ------
 import "./globals.css";

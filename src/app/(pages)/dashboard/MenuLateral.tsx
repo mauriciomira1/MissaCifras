@@ -1,34 +1,25 @@
+"use client";
 import { MouseEventHandler } from "react";
 import ItemMenuLateral from "./ItemMenuLateral";
-import { BiEdit, BiListUl, BiSolidPlaylist, BiUser } from "react-icons/bi";
+import { BiEdit, BiSolidPlaylist } from "react-icons/bi";
 import { FiSend } from "react-icons/fi";
 
-interface MenuLateralProps {
-  btnVerPlaylists: MouseEventHandler;
-  btnVerCifrasEnviadas: MouseEventHandler;
-  btnEnviarCifra: MouseEventHandler;
-}
-
-const MenuLateral = ({
-  btnVerPlaylists,
-  btnVerCifrasEnviadas,
-  btnEnviarCifra,
-}: MenuLateralProps) => {
+const MenuLateral = () => {
   return (
     <nav>
       {/*       <ItemMenuLateral href="#" icon={BiUser} name="Meus dados" /> */}
       <ItemMenuLateral
-        onClick={btnVerPlaylists}
+        href="/dashboard/playlists"
         icon={BiSolidPlaylist}
         name="Playlists"
       />
       <ItemMenuLateral
-        onClick={btnVerCifrasEnviadas}
+        href="/dashboard/minhas-colaboracoes"
         icon={FiSend}
         name="Cifras enviadas"
       />
       <ItemMenuLateral
-        onClick={btnEnviarCifra}
+        href="/dashboard/enviar-cifra"
         icon={BiEdit}
         name="Enviar Cifra"
       />

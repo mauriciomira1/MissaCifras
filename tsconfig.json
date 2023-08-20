@@ -29,7 +29,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/loading/loading.tsx",
-    "src/app/(pages)/api/cifra/staticdata.js"
+    "src/app/(pages)/api/cifra/staticdata.js",
+    "src/components/Dashboard/EnviarCifra"
   ],
   "exclude": ["node_modules"]
 }

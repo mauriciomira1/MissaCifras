@@ -1,6 +1,5 @@
 import { useState } from "react";
 import InputData from "./InputData";
-import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 const Etapa01 = () => {
   const [songData, setSongData] = useState({
