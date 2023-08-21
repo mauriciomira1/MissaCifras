@@ -23,37 +23,25 @@ interface SongDataProps {
   userWhoSent?: string;
 }
 
-interface LetraProps {
+interface ListSongsProps extends SongDataProps {
   letra: string;
-}
-interface CifraProps {
   cifra: string;
 }
 
-interface ListSongsProps {
-  id: number;
-  musica: string;
-  versao: string;
-  cantor: string;
-  compositor: string;
-  tom: string;
-  bpm: number;
-  video: string;
-  hashtags: string;
-  momentoDaMissa: string;
-  qtdDeCliques: number;
-  userWhoSent: string;
-  letra: LetraProps;
-  cifra: CifraProps;
-}
+/* interface LetraProps {
+  letra: string;
+} */
+/* interface CifraProps {
+  cifra: string;
+} */
 
 interface ContextNewMusicProps {
   setSongData: Dispatch<SetStateAction<SongDataProps>>;
-  setLetra: Dispatch<SetStateAction<LetraProps>>;
-  setCifra: Dispatch<SetStateAction<CifraProps>>;
+  setLetra: Dispatch<SetStateAction<string>>;
+  setCifra: Dispatch<SetStateAction<string>>;
   songData: SongDataProps;
-  letra: LetraProps;
-  cifra: CifraProps;
+  letra: string;
+  cifra: string;
   EtapaSong01: (data: SongDataProps) => void;
   EtapaSong02: (data: string) => void;
 }
@@ -63,10 +51,20 @@ const ContextNewMusic = createContext<ContextNewMusicProps>(
 );
 
 export const NewMusicContextProvider = (props: { children: ReactNode }) => {
-  const [songData, setSongData] = useState({} as SongDataProps);
+  const [songData, setSongData] = useState<SongDataProps>({
+    musica: "",
+    versao: "",
+    cantor: "",
+    compositor: "",
+    tom: "",
+    bpm: 0,
+    video: "",
+    hashtags: "",
+    momentoDaMissa: "",
+  });
   const [listSongs, setListSongs] = useState([{} as ListSongsProps]);
-  const [letra, setLetra] = useState<LetraProps>({} as LetraProps);
-  const [cifra, setCifra] = useState<CifraProps>({} as CifraProps);
+  const [letra, setLetra] = useState<string>("");
+  const [cifra, setCifra] = useState<string>("");
 
   const EtapaSong01 = (data: SongDataProps) => {
     setSongData((prevState) => ({
@@ -84,10 +82,7 @@ export const NewMusicContextProvider = (props: { children: ReactNode }) => {
   };
 
   const EtapaSong02 = (data: string) => {
-    setSongData((prevState) => ({
-      ...prevState,
-      letra: data,
-    }));
+    setLetra(data);
   };
 
   return (

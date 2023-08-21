@@ -3,7 +3,7 @@ import { ChangeEventHandler, ForwardedRef, MouseEventHandler } from "react";
 interface InputDataProps {
   placeholder: string;
   type?: string | "text";
-  name?: string;
+  name: string;
   onChange: ChangeEventHandler;
   value: any;
 }

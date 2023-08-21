@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import InputData from "./InputData";
 import { useNewMusic } from "@/contexts/useNewMusicContext";
 
@@ -16,15 +16,21 @@ interface DataProps {
 }
 
 const Etapa01 = () => {
-  const { EtapaSong01 } = useNewMusic();
-  const [data, setData] = useState<DataProps>({} as DataProps);
-  console.log(data);
+  const { EtapaSong01, songData } = useNewMusic();
+  const [data, setData] = useState<DataProps>(songData || {});
+
+  useEffect(() => {
+    localStorage.setItem("dataSong", JSON.stringify(data));
+    EtapaSong01(data);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data]);
 
   const handleChange = (ev: any) => {
     const { name, value } = ev.target;
     setData((prevData) => ({ ...prevData, [name]: value }));
-    EtapaSong01(data);
   };
+
+  console.log(data);
 
   return (
     <div className="flex flex-col items-center gap-1.5">
@@ -79,10 +85,10 @@ const Etapa01 = () => {
       </select>
       <InputData
         placeholder="BPM (batimentos por minuto)"
-        type="number"
+        type="text"
         name="bpm"
         onChange={handleChange}
-        value={data.bpm}
+        value={+data.bpm}
       />
       <InputData
         placeholder="Vídeo do Youtube com a versão"

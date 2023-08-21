@@ -1,12 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useNewMusic } from "@/contexts/useNewMusicContext";
+import { useEffect, useState } from "react";
 
 const Etapa02 = () => {
-  const [letraDaMusica, setLetraDaMusica] = useState<string>("");
+  const { EtapaSong02, letra } = useNewMusic();
+
+  const [letraDaMusica, setLetraDaMusica] = useState<string>(letra || "");
+
+  useEffect(() => {
+    EtapaSong02(letraDaMusica);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [letraDaMusica]);
 
   const handleChange = (ev: any) => {
     setLetraDaMusica(ev.target.value);
+    EtapaSong02(letraDaMusica);
   };
 
   return (
