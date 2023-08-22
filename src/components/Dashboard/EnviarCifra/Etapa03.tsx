@@ -1,6 +1,8 @@
 "use client";
+import "./etapa03.css";
 import { useNewMusic } from "@/contexts/useNewMusicContext";
 import { useState } from "react";
+import { GrFormClose } from "react-icons/gr";
 
 const Etapa03 = () => {
   const { letra } = useNewMusic();
@@ -12,13 +14,8 @@ const Etapa03 = () => {
   };
 
   const janelaDeCifra = (ev: any, index: number) => {
-    setActiveIndex(index);
+    activeIndex === index ? setActiveIndex(null) : setActiveIndex(index);
     ev.preventDefault();
-    return (
-      <div className="px-2 py-1 text-black z-10 bg-yellow-600 rounded relative shadow-md shadow-gray-800 top-50">
-        <input type="text" name="acorde" id="acorde" />
-      </div>
-    );
   };
 
   const buttons = letra.split("").map((char, index) => {
@@ -31,14 +28,24 @@ const Etapa03 = () => {
             key={index}
             id={`char-${index}`}
             onClick={(ev) => janelaDeCifra(ev, index)}
-            className="hover:font-bold hover:text-secondaryColor active:text-primaryColor"
+            className="hover:text-secondaryColor active:text-primaryColor"
           >
             <div
-              className={`px-1 py-1 text-black z-10 bg-gray-100 w-20 rounded absolute top-0 -left-8 shadow-md border-2 shadow-gray-500 transform -translate-y-full ${
+              className={`px-1 py-2 text-black z-10 bg-gray-100 w-24 rounded absolute top-0 -left-8 shadow-md border-2 border-gray-300 shadow-gray-400 transform -translate-y-full ${
                 activeIndex === index ? "block" : "hidden"
               }`}
             >
-              <input type="text" name="acorde" id="acorde" className="w-16" />
+              <GrFormClose
+                className="absolute right-0 top-0"
+                onClick={() => setActiveIndex(null)}
+              />
+
+              <input
+                type="text"
+                name="acorde"
+                id="acorde"
+                className="w-20 outline-none text-sm"
+              />
             </div>
             {char}
           </button>

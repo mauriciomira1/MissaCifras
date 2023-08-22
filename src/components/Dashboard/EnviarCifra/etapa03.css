@@ -1,0 +1,5 @@
+button:hover {
+  font-weight: bold;
+  background-color: rgba(68, 68, 68, 0.212);
+  color: #a7a7a7;
+}
