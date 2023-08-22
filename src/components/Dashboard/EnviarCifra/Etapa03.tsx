@@ -1,7 +1,7 @@
 "use client";
 import "./etapa03.css";
 import { useNewMusic } from "@/contexts/useNewMusicContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GrFormClose } from "react-icons/gr";
 
 const Etapa03 = () => {
@@ -14,9 +14,30 @@ const Etapa03 = () => {
   };
 
   const janelaDeCifra = (ev: any, index: number) => {
-    activeIndex === index ? setActiveIndex(null) : setActiveIndex(index);
+    if (activeIndex === null) {
+      setActiveIndex(index);
+    }
     ev.preventDefault();
   };
+
+  const closeWindow = () => {
+    setActiveIndex(null);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (ev: any) => {
+      if (
+        !ev.target.closest("#caixaDeAcorde") &&
+        !ev.target.closest("button")
+      ) {
+        setActiveIndex(null);
+      }
+    };
+    window.addEventListener("click", handleClickOutside);
+    return () => {
+      window.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
 
   const buttons = letra.split("").map((char, index) => {
     if (char === "\n") {
@@ -31,13 +52,14 @@ const Etapa03 = () => {
             className="hover:text-secondaryColor active:text-primaryColor"
           >
             <div
-              className={`px-1 py-2 text-black z-10 bg-gray-100 w-24 rounded absolute top-0 -left-8 shadow-md border-2 border-gray-300 shadow-gray-400 transform -translate-y-full ${
+              id="caixaDeAcorde"
+              className={`px-1 py-2 text-black z-10 bg-white w-24 rounded absolute top-0 -left-8 shadow-md border-2 border-gray-300 shadow-gray-400 transform -translate-y-full ${
                 activeIndex === index ? "block" : "hidden"
               }`}
             >
               <GrFormClose
                 className="absolute right-0 top-0"
-                onClick={() => setActiveIndex(null)}
+                onClick={closeWindow}
               />
 
               <input
