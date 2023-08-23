@@ -83,13 +83,16 @@ const Etapa01 = () => {
         <option value="A#">A#</option>
         <option value="B">B</option>
       </select>
-      <InputData
-        placeholder="BPM (batimentos por minuto)"
-        type="text"
-        name="bpm"
-        onChange={handleChange}
-        value={+data.bpm}
-      />
+      <div className="w-full flex items-center">
+        <span className="mr-2 font-bold font-text text-sm">BPM:</span>
+        <InputData
+          placeholder="BPM (batimentos por minuto)"
+          type="text"
+          name="bpm"
+          onChange={handleChange}
+          value={+data.bpm}
+        />
+      </div>
       <InputData
         placeholder="Vídeo do Youtube com a versão"
         type="url"

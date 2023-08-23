@@ -13,10 +13,10 @@ const Etapa03 = () => {
     setCifraDaMusica(ev.target.value);
   };
 
-  const janelaDeCifra = (ev: any, index: number) => {
-    if (activeIndex === null) {
-      setActiveIndex(index);
-    }
+  const openCifraWindow = (ev: any, index: number) => {
+    /*     if (activeIndex === null) { */
+    setActiveIndex(index);
+    /*     } */
     ev.preventDefault();
   };
 
@@ -46,9 +46,8 @@ const Etapa03 = () => {
       return (
         <span key={index} className="group relative">
           <button
-            key={index}
             id={`char-${index}`}
-            onClick={(ev) => janelaDeCifra(ev, index)}
+            onClick={(ev) => openCifraWindow(ev, index)}
             className="hover:text-secondaryColor active:text-primaryColor"
           >
             <div
