@@ -4,24 +4,55 @@ import { useNewMusic } from "@/contexts/useNewMusicContext";
 import { useEffect, useState } from "react";
 import { GrFormClose } from "react-icons/gr";
 
+interface chordProps {
+  acorde: string;
+  index: number;
+}
+
 const Etapa03 = () => {
   const { letra } = useNewMusic();
   const [cifraDaMusica, setCifraDaMusica] = useState<string>("");
   const [activeIndex, setActiveIndex] = useState<any>();
+  const [chordsList, setChordsList] = useState<chordProps[]>([]);
 
-  const handleChange = (ev: any) => {
+  const handleChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setCifraDaMusica(ev.target.value);
   };
 
-  const openCifraWindow = (ev: any, index: number) => {
-    /*     if (activeIndex === null) { */
-    setActiveIndex(index);
-    /*     } */
+  const openCifraWindow = (
+    ev: React.MouseEvent<HTMLButtonElement>,
+    index: number
+  ) => {
+    if (activeIndex === null || activeIndex !== index) {
+      setActiveIndex(index);
+    }
     ev.preventDefault();
   };
 
   const closeWindow = () => {
     setActiveIndex(null);
+  };
+
+  const handleChordChange = (
+    ev: React.ChangeEvent<HTMLInputElement>,
+    index: number
+  ) => {
+    setChordsList((prevChords) => {
+      const chordIndex = prevChords.findIndex((chord) => chord.index === index);
+      if (chordIndex !== -1) {
+        // Atualiza o acorde existente
+        const updatedChords = [...prevChords];
+
+        updatedChords[chordIndex] = {
+          ...updatedChords[chordIndex],
+          acorde: ev.target.value,
+        };
+        return updatedChords;
+      } else {
+        // Adiciona novo acorde
+        return prevChords.concat({ acorde: ev.target.value, index });
+      }
+    });
   };
 
   useEffect(() => {
@@ -34,10 +65,11 @@ const Etapa03 = () => {
       }
     };
     window.addEventListener("click", handleClickOutside);
+    console.log(chordsList);
     return () => {
       window.removeEventListener("click", handleClickOutside);
     };
-  }, []);
+  }, [chordsList]);
 
   const buttons = letra.split("").map((char, index) => {
     if (char === "\n") {
@@ -45,6 +77,10 @@ const Etapa03 = () => {
     } else {
       return (
         <span key={index} className="group relative">
+          <span id="chordItem" className="bg-red-200">
+            {chordsList &&
+              chordsList.find((chord) => chord.index === index)?.acorde}
+          </span>
           <button
             id={`char-${index}`}
             onClick={(ev) => openCifraWindow(ev, index)}
@@ -66,6 +102,7 @@ const Etapa03 = () => {
                 name="acorde"
                 id="acorde"
                 className="w-20 outline-none text-sm"
+                onChange={(ev) => handleChordChange(ev, index)}
               />
             </div>
             {char}

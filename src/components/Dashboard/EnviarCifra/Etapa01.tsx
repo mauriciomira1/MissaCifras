@@ -30,8 +30,6 @@ const Etapa01 = () => {
     setData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  console.log(data);
-
   return (
     <div className="flex flex-col items-center gap-1.5">
       <h1 className="font-text text-primaryColor py-1 font-bold">
