@@ -20,6 +20,7 @@ interface SongDataProps {
   hashtags: string;
   momentoDaMissa: string;
   qtdDeCliques?: number;
+  chordsList?: string[];
   userWhoSent?: string;
 }
 
@@ -42,6 +43,7 @@ interface ContextNewMusicProps {
   songData: SongDataProps;
   letra: string;
   cifra: string;
+  chordsList: string[];
   EtapaSong01: (data: SongDataProps) => void;
   EtapaSong02: (data: string) => void;
 }
