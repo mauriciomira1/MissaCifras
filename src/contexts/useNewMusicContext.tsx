@@ -24,26 +24,30 @@ interface SongDataProps {
   userWhoSent?: string;
 }
 
-interface ListSongsProps extends SongDataProps {
+interface CifraProps {
   letra: string;
-  cifra: string;
+  chordsList: chordsListProps;
 }
 
-/* interface LetraProps {
+interface ListSongsProps extends SongDataProps {
   letra: string;
-} */
-/* interface CifraProps {
-  cifra: string;
-} */
+  cifra: CifraProps;
+}
+
+interface chordsListProps {
+  acorde: string;
+  index: number;
+}
 
 interface ContextNewMusicProps {
   setSongData: Dispatch<SetStateAction<SongDataProps>>;
   setLetra: Dispatch<SetStateAction<string>>;
-  setCifra: Dispatch<SetStateAction<string>>;
+  setCifra: Dispatch<SetStateAction<CifraProps>>;
   songData: SongDataProps;
   letra: string;
-  cifra: string;
-  chordsList: string[];
+  cifra: CifraProps | undefined;
+  chordsList: chordsListProps[];
+  setChordsList: Dispatch<SetStateAction<chordsListProps[]>>;
   EtapaSong01: (data: SongDataProps) => void;
   EtapaSong02: (data: string) => void;
 }
@@ -63,10 +67,12 @@ export const NewMusicContextProvider = (props: { children: ReactNode }) => {
     video: "",
     hashtags: "",
     momentoDaMissa: "",
+    chordsList: [],
   });
   const [listSongs, setListSongs] = useState([{} as ListSongsProps]);
   const [letra, setLetra] = useState<string>("");
-  const [cifra, setCifra] = useState<string>("");
+  const [cifra, setCifra] = useState<CifraProps>();
+  const [chordsList, setChordsList] = useState<chordsListProps[]>([]);
 
   const EtapaSong01 = (data: SongDataProps) => {
     setSongData((prevState) => ({
@@ -87,6 +93,15 @@ export const NewMusicContextProvider = (props: { children: ReactNode }) => {
     setLetra(data);
   };
 
+  const EtapaSong03 = (
+    letra: string,
+    chordsList: chordsListProps) => {
+    setCifra({
+      letra,
+      chordsList,
+    });
+  };
+
   return (
     <ContextNewMusic.Provider
       value={{
@@ -96,8 +111,11 @@ export const NewMusicContextProvider = (props: { children: ReactNode }) => {
         songData,
         letra,
         cifra,
+        chordsList,
+        setChordsList,
         EtapaSong01,
         EtapaSong02,
+        EtapaSong03,
       }}
     >
       {props.children}

@@ -1,19 +1,13 @@
 "use client";
-import "./etapa03.css";
+import "./etapa03e04.css";
 import { useNewMusic } from "@/contexts/useNewMusicContext";
 import { useEffect, useRef, useState } from "react";
 import { GrFormClose } from "react-icons/gr";
 
-interface chordProps {
-  acorde: string;
-  index: number;
-}
-
 const Etapa03 = () => {
-  const { letra } = useNewMusic();
+  const { letra, chordsList, setChordsList } = useNewMusic();
   const [cifraDaMusica, setCifraDaMusica] = useState<string>("");
   const [activeIndex, setActiveIndex] = useState<any>();
-  const [chordsList, setChordsList] = useState<chordProps[]>([]);
   const chordInputRefs = useRef<Array<HTMLInputElement | null>>([]);
 
   const handleChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
