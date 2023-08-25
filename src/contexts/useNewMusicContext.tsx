@@ -26,17 +26,17 @@ interface SongDataProps {
 
 interface CifraProps {
   letra: string;
-  chordsList: chordsListProps;
-}
-
-interface ListSongsProps extends SongDataProps {
-  letra: string;
-  cifra: CifraProps;
+  chordsList: chordsListProps[];
 }
 
 interface chordsListProps {
   acorde: string;
   index: number;
+}
+
+interface ListSongsProps extends SongDataProps {
+  letra: string;
+  cifra: CifraProps;
 }
 
 interface ContextNewMusicProps {
@@ -45,11 +45,12 @@ interface ContextNewMusicProps {
   setCifra: Dispatch<SetStateAction<CifraProps>>;
   songData: SongDataProps;
   letra: string;
-  cifra: CifraProps | undefined;
+  cifra?: CifraProps;
   chordsList: chordsListProps[];
   setChordsList: Dispatch<SetStateAction<chordsListProps[]>>;
   EtapaSong01: (data: SongDataProps) => void;
   EtapaSong02: (data: string) => void;
+  EtapaSong03: () => void;
 }
 
 const ContextNewMusic = createContext<ContextNewMusicProps>(
@@ -67,13 +68,12 @@ export const NewMusicContextProvider = (props: { children: ReactNode }) => {
     video: "",
     hashtags: "",
     momentoDaMissa: "",
-    chordsList: [],
   });
   const [listSongs, setListSongs] = useState([{} as ListSongsProps]);
   const [letra, setLetra] = useState<string>("");
-  const [cifra, setCifra] = useState<CifraProps>();
+  const [cifra, setCifra] = useState<CifraProps>({} as CifraProps);
   const [chordsList, setChordsList] = useState<chordsListProps[]>([]);
-
+  console.log(cifra);
   const EtapaSong01 = (data: SongDataProps) => {
     setSongData((prevState) => ({
       ...prevState,
@@ -93,14 +93,14 @@ export const NewMusicContextProvider = (props: { children: ReactNode }) => {
     setLetra(data);
   };
 
-  const EtapaSong03 = (
-    letra: string,
-    chordsList: chordsListProps) => {
+  const EtapaSong03 = () => {
     setCifra({
       letra,
       chordsList,
     });
   };
+
+  /*   const EtapaSong04 = () => {}; */
 
   return (
     <ContextNewMusic.Provider

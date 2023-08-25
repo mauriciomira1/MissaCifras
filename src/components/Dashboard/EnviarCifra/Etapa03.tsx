@@ -4,15 +4,20 @@ import { useNewMusic } from "@/contexts/useNewMusicContext";
 import { useEffect, useRef, useState } from "react";
 import { GrFormClose } from "react-icons/gr";
 
+interface chordsListProps {
+  acorde: string;
+  index: number;
+}
+
 const Etapa03 = () => {
-  const { letra, chordsList, setChordsList } = useNewMusic();
+  const { letra, EtapaSong03, chordsList, setChordsList } = useNewMusic();
   const [cifraDaMusica, setCifraDaMusica] = useState<string>("");
   const [activeIndex, setActiveIndex] = useState<any>();
   const chordInputRefs = useRef<Array<HTMLInputElement | null>>([]);
 
-  const handleChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
+  /*   const handleChange = (ev: React.ChangeEvent<HTMLInputElement>) => {
     setCifraDaMusica(ev.target.value);
-  };
+  }; */
 
   const openCifraWindow = (
     ev: React.MouseEvent<HTMLButtonElement>,
@@ -51,6 +56,8 @@ const Etapa03 = () => {
         return prevChords.concat({ acorde: ev.target.value, index });
       }
     });
+    console.log(chordsList);
+    EtapaSong03();
   };
 
   useEffect(() => {
@@ -63,7 +70,6 @@ const Etapa03 = () => {
       }
     };
     window.addEventListener("click", handleClickOutside);
-    console.log(chordsList);
     return () => {
       window.removeEventListener("click", handleClickOutside);
     };
