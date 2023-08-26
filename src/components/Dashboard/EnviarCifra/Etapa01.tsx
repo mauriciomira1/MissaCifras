@@ -48,7 +48,7 @@ const Etapa01 = () => {
         value={data.versao}
       />
       <InputData
-        placeholder="Nome o cantor"
+        placeholder="Cantor ou Banda"
         name="cantor"
         onChange={handleChange}
         value={data.cantor}
@@ -82,7 +82,9 @@ const Etapa01 = () => {
         <option value="B">B</option>
       </select>
       <div className="w-full flex items-center">
-        <span className="mr-2 font-bold font-text text-sm">BPM:</span>
+        <span className="mr-2 font-bold font-text text-sm w-28">
+          BPM <span className="text-[.8em]">(opcional)</span>:
+        </span>
         <InputData
           placeholder="BPM (batimentos por minuto)"
           type="text"

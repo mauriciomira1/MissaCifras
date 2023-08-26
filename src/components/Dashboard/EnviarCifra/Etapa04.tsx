@@ -36,7 +36,7 @@ const Etapa04 = () => {
           Dados da música
         </h2>
         <hr />
-        <div className="pl-2 flex flex-col font-text">
+        <div className="pl-2 gap-2 flex flex-col font-text text-sm py-2">
           <p>
             Nome da música: <strong>{songData.musica}</strong>
           </p>
