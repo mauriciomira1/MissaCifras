@@ -73,7 +73,6 @@ export const NewMusicContextProvider = (props: { children: ReactNode }) => {
   const [letra, setLetra] = useState<string>("");
   const [cifra, setCifra] = useState<CifraProps>({} as CifraProps);
   const [chordsList, setChordsList] = useState<chordsListProps[]>([]);
-  console.log(cifra);
   const EtapaSong01 = (data: SongDataProps) => {
     setSongData((prevState) => ({
       ...prevState,
@@ -99,8 +98,6 @@ export const NewMusicContextProvider = (props: { children: ReactNode }) => {
       chordsList,
     });
   };
-
-  /*   const EtapaSong04 = () => {}; */
 
   return (
     <ContextNewMusic.Provider

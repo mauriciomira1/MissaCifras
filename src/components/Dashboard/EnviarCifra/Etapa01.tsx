@@ -113,16 +113,16 @@ const Etapa01 = () => {
         <option value="" disabled>
           Selecione o momento da missa
         </option>
-        <option value="entrada">Canto de entrada</option>
-        <option value="atoPenitencial">Ato Penitencial</option>
-        <option value="gloria">Glória</option>
-        <option value="aclamacao">Aclamação ao Evangelho</option>
-        <option value="ofertorio">Ofertório</option>
-        <option value="santo">Santo</option>
-        <option value="cordeiro">Cordeiro</option>
-        <option value="comunhao">Comunhão</option>
-        <option value="posComunhao">Pós Comunhão</option>
-        <option value="final">Final</option>
+        <option value="Canto de entrada">Canto de entrada</option>
+        <option value="Ato Penitencial">Ato Penitencial</option>
+        <option value="Glória">Glória</option>
+        <option value="Aclamação">Aclamação ao Evangelho</option>
+        <option value="Ofertório">Ofertório</option>
+        <option value="Santo">Santo</option>
+        <option value="Cordeiro">Cordeiro</option>
+        <option value="Comunhão">Comunhão</option>
+        <option value="Pós Comunhão">Pós Comunhão</option>
+        <option value="Final">Final</option>
       </select>
     </div>
   );

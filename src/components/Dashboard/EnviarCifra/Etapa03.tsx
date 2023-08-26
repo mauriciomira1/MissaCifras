@@ -56,7 +56,6 @@ const Etapa03 = () => {
         return prevChords.concat({ acorde: ev.target.value, index });
       }
     });
-    console.log(chordsList);
     EtapaSong03();
   };
 
@@ -127,7 +126,9 @@ const Etapa03 = () => {
       <h1 className="font-text text-primaryColor py-1 font-bold">
         ETAPA 03 - CIFRA
       </h1>
-      <div className="whitespace-pre-wrap">{buttons}</div>
+      <section className="whitespace-pre-wrap font-cifra my-4">
+        {buttons}
+      </section>
     </div>
   );
 };
