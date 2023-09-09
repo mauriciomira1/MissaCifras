@@ -2,8 +2,8 @@ const mongoose = require("mongoose")
 
 const { Schema } = mongoose;
 
-const { artistaSchema } = require("./Artista")
-const { userSchema } = require("./User")
+/* const { artistaSchema } = require("./Artista") */
+/* const { userSchema } = require("./User") */
 
 const cifraSchema = new Schema({
   musica: {
@@ -15,11 +15,11 @@ const cifraSchema = new Schema({
     required: true
   },
   cantor: {
-    type: [artistaSchema],
+    type: String,
     required: true
   },
   compositor: {
-    type: String,
+    type: String
   },
   tom: {
     type: String,
@@ -31,16 +31,23 @@ const cifraSchema = new Schema({
   video: {
     type: String,
   },
+  letra: {
+    type: String,
+    required: true
+  },
   cifra: {
     type: String,
     required: true
   },
   hashtags: {
-    type: [String]
+    type: String,
   },
   momentoDaMissa: {
     type: String,
     required: true
+  },
+  liturgica: {
+    type: Boolean
   },
   qtdDeCliques: {
     type: Number
@@ -48,12 +55,15 @@ const cifraSchema = new Schema({
   chordsList: {
     type: [String]
   },
-  userWhoSent: {
-    type: userSchema,
-    required: true
-  }
+  /*   usuarioQueEnviou: {
+      type: [userSchema],
+      required: true
+    } */
 }, { timestamps: true })
 
 const Cifra = mongoose.model("Cifra", cifraSchema)
 
-module.exports = Cifra
+module.exports = {
+  Cifra,
+  cifraSchema
+}

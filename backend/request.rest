@@ -1,5 +1,8 @@
+POST http://localhost:3000/api/cifras
+Content-Type: application/json
+
 {
-  "musica": "Manda teus anjos",
+  "musica": "Manda Teus Anjos",
   "versao": "DVD Ao Vivo em Brasília",
   "cantor": "Anjos de Resgate",
   "compositor": "Agnaldo José dos Santos e Paulo Sérgio de Souza",
@@ -12,3 +15,6 @@
   "momentoDaMissa": "Canto de Entrada",
   "liturgica": true
 }
+
+###
+GET http://localhost:3000/api/cifras
