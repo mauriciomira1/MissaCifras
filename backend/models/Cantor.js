@@ -1,9 +1,10 @@
 const mongoose = require("mongoose")
 
 const { Schema } = mongoose;
-/* const { cifraSchema } = require("./Cifra") */
 
-const artistaSchema = new Schema({
+const { cifraSchema } = require("../models/Cifra")
+
+const cantorSchema = new Schema({
   nome: {
     type: String,
     required: true
@@ -15,11 +16,11 @@ const artistaSchema = new Schema({
   capa: {
     type: String
   },
-  /*   cifras: {
-      type: [cifraSchema]
-    } */
+  cifras: {
+    type: [cifraSchema]
+  }
 }, { timestamps: true })
 
-const Artista = mongoose.model("Artista", artistaSchema)
+const Cantor = mongoose.model("Cantor", cantorSchema)
 
-module.exports = { Artista, artistaSchema };
+module.exports = { Cantor };

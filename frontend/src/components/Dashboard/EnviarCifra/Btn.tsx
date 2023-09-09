@@ -1,9 +1,10 @@
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, ReactNode } from "react";
 
 interface BtnProps {
   name: "PRÓXIMO" | "ANTERIOR" | "ENVIAR";
   onClick?: MouseEventHandler;
   id: string;
+  /*   handleSend?: (ev: React.FormEvent) => void; */
 }
 
 const Btn = ({ name, onClick, id }: BtnProps) => {

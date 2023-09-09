@@ -4,16 +4,23 @@ import Etapa01 from "@/components/Dashboard/EnviarCifra/Etapa01";
 import Etapa02 from "@/components/Dashboard/EnviarCifra/Etapa02";
 import Etapa03 from "@/components/Dashboard/EnviarCifra/Etapa03";
 import Etapa04 from "@/components/Dashboard/EnviarCifra/Etapa04";
-import { useState } from "react";
+import { useNewMusic } from "@/contexts/useNewMusicContext";
+import { stringify } from "querystring";
+import { FormEvent, ReactElement, useState } from "react";
 
 const EnviarCifraComponent = () => {
+  const { songData, letra, cifra, chordsList } = useNewMusic();
+
+  const hashtagsArray = songData.hashtags
+    .split(/[.,; ]/)
+    .map((item) => item.trim());
+
   const [etapaAtual, setEtapaAtual] = useState(0);
   const [btnState, setBtnState] = useState(true);
 
   const selectedBtn =
     "font-text text-green-400 text-xl align-middle font-bold border-2 border-green-400 rounded-md h-8 w-8";
-  const activeBtn =
-    "font-text text-gray-900 text-xl align-middle font-bold bg-green-400  rounded-md h-8 w-8";
+
   const inactiveBtn =
     "font-text text-gray-900 text-xl align-middle font-bold bg-gray-300 rounded-md h-8 w-8";
 
@@ -31,6 +38,40 @@ const EnviarCifraComponent = () => {
     if (etapaAtual < 4) {
       setBtnState(true);
     }
+  };
+
+  const handleSend = () => {
+    // Juntando todos os dados para enviar a nova música para o servidor
+    if (!cifra || !songData || !letra || !chordsList) {
+      console.log("Falta dados para o envio ao servidor.");
+      return;
+    }
+    const completeSong = {
+      musica: songData.musica,
+      versao: songData.versao,
+      cantor: songData.cantor,
+      compositor: songData.compositor,
+      tom: songData.tom,
+      bpm: +songData.bpm,
+      video: songData.video,
+      letra: letra,
+      cifra: cifra,
+      hashtags: hashtagsArray,
+      momentoDaMissa: songData.momentoDaMissa,
+      liturgica: songData.liturgica,
+      /*       chordsList: chordsList, */
+      qtdDeCliques: 0,
+      /* usuarioQueEnviou, */
+    };
+
+    fetch("http://localhost:3000/api/cifras", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(completeSong),
+    }).then((res) => alert(res));
+    console.log(completeSong);
   };
 
   const renderDaEtapaAtual = () => {
@@ -110,7 +151,14 @@ const EnviarCifraComponent = () => {
         {btnState === true ? (
           <Btn name="PRÓXIMO" id="btnProximo" onClick={btnProximo} />
         ) : (
-          <Btn name="ENVIAR" id="Enviar" />
+          <Btn
+            name="ENVIAR"
+            id="Enviar"
+            onClick={(ev) => {
+              ev.preventDefault();
+              handleSend();
+            }}
+          />
         )}
       </div>
     </form>

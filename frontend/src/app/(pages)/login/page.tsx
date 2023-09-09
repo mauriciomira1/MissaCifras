@@ -7,6 +7,10 @@ import FormularioLogin from "./FormularioLogin";
 // Ícones
 import { FaArrowLeft } from "react-icons/fa";
 
+export const metadata = {
+  title: "Login",
+};
+
 const Login = () => {
   return (
     <div className="bg-gradient-to-r from-[#1A3F78] to-[#EA9D9D] w-full h-screen flex-col md:flex-row flex items-center justify-start sm:justify-center gap-6">

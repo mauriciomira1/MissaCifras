@@ -22,6 +22,7 @@ interface SongDataProps {
   qtdDeCliques?: number;
   chordsList?: string[];
   userWhoSent?: string;
+  liturgica: boolean;
 }
 
 interface CifraProps {
@@ -68,6 +69,7 @@ export const NewMusicContextProvider = (props: { children: ReactNode }) => {
     video: "",
     hashtags: "",
     momentoDaMissa: "",
+    liturgica: false,
   });
   const [listSongs, setListSongs] = useState([{} as ListSongsProps]);
   const [letra, setLetra] = useState<string>("");
@@ -85,6 +87,7 @@ export const NewMusicContextProvider = (props: { children: ReactNode }) => {
       video: data.video,
       hashtags: data.hashtags,
       momentoDaMissa: data.momentoDaMissa,
+      liturgica: data.liturgica,
     }));
   };
 

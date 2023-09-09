@@ -2,8 +2,7 @@ const mongoose = require("mongoose")
 
 const { Schema } = mongoose
 
-/* const { cifraSchema } = require("./Cifra")
- */const { playlistSchema } = require("./Playlist")
+const { playlistSchema } = require("./Playlist")
 
 const userSchema = new Schema({
   name: {
@@ -16,9 +15,9 @@ const userSchema = new Schema({
   playlists: {
     type: [playlistSchema]
   },
-  /*   colaboracoes: {
-      type: [cifraSchema]
-    } */
+  colaboracoes: {
+    type: String
+  }
 }, { timestamps: true })
 
 const User = mongoose.model("User", userSchema)

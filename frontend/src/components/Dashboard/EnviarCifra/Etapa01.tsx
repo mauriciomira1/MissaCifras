@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { ReactNode, useEffect, useState } from "react";
 import InputData from "./InputData";
 import { useNewMusic } from "@/contexts/useNewMusicContext";
 
@@ -13,11 +13,18 @@ interface DataProps {
   video: string;
   hashtags: string;
   momentoDaMissa: string;
+  liturgica: boolean;
 }
 
 const Etapa01 = () => {
   const { EtapaSong01, songData } = useNewMusic();
   const [data, setData] = useState<DataProps>(songData || {});
+  const [checked, setChecked] = useState(false);
+
+  const handleChecked = (ev: React.ChangeEvent<HTMLInputElement>) => {
+    setChecked(ev.target.checked);
+    data.liturgica = !checked;
+  };
 
   useEffect(() => {
     localStorage.setItem("dataSong", JSON.stringify(data));
@@ -126,6 +133,18 @@ const Etapa01 = () => {
         <option value="Pós Comunhão">Pós Comunhão</option>
         <option value="Final">Final</option>
       </select>
+      <div className="flex items-center gap-2">
+        <label htmlFor="liturgica" className="font-cifra">
+          Essa música é litúrgica:
+        </label>
+        <input
+          type="checkbox"
+          name="liturgica"
+          id="liturgica"
+          checked={checked}
+          onChange={handleChecked}
+        />
+      </div>
     </div>
   );
 };

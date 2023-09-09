@@ -28,6 +28,16 @@ const cifraController = {
     }
   },
 
+  getAll: async (req, res) => {
+    try {
+      const cifras = await CifraModel.find()
+      res.status(200).json(cifras)
+    } catch (error) {
+      console.log(error)
+
+    }
+  },
+
   get: async (req, res) => {
     try {
       const cifras = await CifraModel.findById(req.params.id)
@@ -73,7 +83,14 @@ const cifraController = {
         liturgica: req.body.liturgica,
         chordsList: req.body.chordsList
       }
-      const updatedCifra = await CifraModel.findByIdAndUpdate(cifra)
+      const updatedCifra = await CifraModel.findByIdAndUpdate(req.params.id, cifra)
+
+      if (!updatedCifra) {
+        res.status(404).json({ msg: "Festa não encontrada." })
+        return;
+      }
+
+      res.status(200).json({ cifra, msg: "Cifra atualizada com sucesso!" })
 
     } catch (error) {
       console.log(error)
