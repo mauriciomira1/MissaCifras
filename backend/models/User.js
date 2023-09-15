@@ -18,7 +18,7 @@ const userSchema = new Schema({
   colaboracoes: {
     type: String
   }
-}, { timestamps: true })
+}, { timestamps: true })z
 
 const User = mongoose.model("User", userSchema)
 
