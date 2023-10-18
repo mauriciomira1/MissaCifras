@@ -5,8 +5,8 @@ import Etapa02 from "@/components/Dashboard/EnviarCifra/Etapa02";
 import Etapa03 from "@/components/Dashboard/EnviarCifra/Etapa03";
 import Etapa04 from "@/components/Dashboard/EnviarCifra/Etapa04";
 import { useNewMusic } from "@/contexts/useNewMusicContext";
-import { stringify } from "querystring";
-import { FormEvent, ReactElement, useState } from "react";
+import { prismaClient } from "@/lib/prisma";
+import { useState } from "react";
 
 const EnviarCifraComponent = () => {
   const { songData, letra, cifra, chordsList } = useNewMusic();
@@ -40,13 +40,13 @@ const EnviarCifraComponent = () => {
     }
   };
 
-  const handleSend = () => {
+  const handleSend = async () => {
     // Juntando todos os dados para enviar a nova música para o servidor
     if (!cifra || !songData || !letra || !chordsList) {
       console.log("Falta dados para o envio ao servidor.");
       return;
     }
-    const completeSong = {
+    const completeSong = await prismaClient.cifra.create({
       musica: songData.musica,
       versao: songData.versao,
       cantor: songData.cantor,
@@ -62,15 +62,15 @@ const EnviarCifraComponent = () => {
       /*       chordsList: chordsList, */
       qtdDeCliques: 0,
       /* usuarioQueEnviou, */
-    };
+    });
 
-    fetch("http://localhost:3000/api/cifras", {
+    /*     fetch("http://localhost:3000/api/cifras", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(completeSong),
-    }).then((res) => alert(res));
+    }).then((res) => alert(res)); */
     console.log(completeSong);
   };
 

@@ -11,7 +11,6 @@ interface chordsListProps {
 
 const Etapa03 = () => {
   const { letra, EtapaSong03, chordsList, setChordsList } = useNewMusic();
-  const [cifraDaMusica, setCifraDaMusica] = useState<string>("");
   const [activeIndex, setActiveIndex] = useState<any>();
   const chordInputRefs = useRef<Array<HTMLInputElement | null>>([]);
 

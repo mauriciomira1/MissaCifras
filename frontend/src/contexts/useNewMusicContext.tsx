@@ -9,6 +9,7 @@ import {
 } from "react";
 
 interface SongDataProps {
+  letra: string;
   id?: number;
   musica: string;
   versao: string;

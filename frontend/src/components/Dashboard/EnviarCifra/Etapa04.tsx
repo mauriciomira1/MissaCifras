@@ -1,13 +1,29 @@
 import { useNewMusic } from "@/contexts/useNewMusicContext";
 import "./etapa03e04.css";
-import { useEffect } from "react";
+import { prismaClient } from "@/lib/prisma";
 
-const Etapa04 = () => {
-  const { cifra, songData } = useNewMusic();
+const Etapa04 = async () => {
+  const { cifra, songData, letra } = useNewMusic();
+
+  const novaCifra = await prismaClient.cifra.create({
+    data: {
+      musica: songData.musica,
+      versao: songData.versao,
+      compositor: songData.compositor,
+      tom: songData.tom,
+      bpm: songData.bpm,
+      video: songData.video,
+      letra: songData.letra,
+      cifra: songData.chordsList,
+      video: songData.video,
+      video: songData.video,
+      video: songData.video,
+    },
+  });
 
   const MusicaCifrada =
-    cifra?.letra &&
-    cifra?.letra.split("").map((char, index) => {
+    letra &&
+    letra?.split("").map((char, index) => {
       if (char === "\n") {
         return <br key={index} />;
       } else {
@@ -15,7 +31,7 @@ const Etapa04 = () => {
           <span key={index} className="group relative">
             <div className="chord-container">
               <span className="chord font-bold font-cifra text-secondaryColor">
-                {cifra.chordsList &&
+                {cifra?.chordsList &&
                   cifra.chordsList.find((chord) => chord.index === index)
                     ?.acorde}
               </span>

@@ -24,6 +24,8 @@ model Artista {
   qtdDeCliques Int
   capa         String
   cifras       ArtistaCifra[]
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @default(now())
 }
 
 model Cifra {
@@ -45,6 +47,8 @@ model Cifra {
   qtdDeCliques     Int
   usuarioQueEnviou User            @relation(fields: [userId], references: [id])
   userId           String
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @default(now())
 }
 
 model ArtistaCifra {
@@ -58,15 +62,18 @@ model ArtistaCifra {
 }
 
 model User {
-  id    String  @id @default(cuid())
-  nome  String
-  Cifra Cifra[]
+  id        String   @id @default(cuid())
+  nome      String
+  Cifra     Cifra[]
+  createdAt DateTime @default(now())
 }
 
 model Playlist {
-  id     String          @id @default(cuid())
-  nome   String
-  cifras PlaylistCifra[]
+  id        String          @id @default(cuid())
+  nome      String
+  cifras    PlaylistCifra[]
+  createdAt DateTime        @default(now())
+  updatedAt DateTime        @default(now())
 }
 
 model PlaylistCifra {
