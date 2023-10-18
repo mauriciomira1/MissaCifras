@@ -12,7 +12,7 @@ import { FaArrowLeft } from "react-icons/fa";
 const Cadastro = () => {
   return (
     <div className="bg-gradient-to-r from-[#1A3F78] to-[#EA9D9D] w-full h-screen flex flex-col gap-6 md:flex-row items-center justify-start sm:justify-center max-sm:pt-14">
-      <div className="flex w-full flex-col items-center">
+      <div className="flex flex-col items-center">
         <Link href="/">
           <div className="flex items-center gap-2 font-text font-semibold mb-4 text-white">
             <FaArrowLeft />

@@ -8,13 +8,13 @@ const CifraArea = () => {
   return (
     <div className="font-cifra">
       <h1 className="font-text font-bold text-primaryColor text-3xl">
-        {cifra.title}
+        {cifra.musica}
       </h1>
       <Link
-        href={cifra.artistPage}
+        href={cifra.cantor}
         className="font-text text-gray-400 hover:text-secondaryColor hover:font-bold"
       >
-        {cifra.artist}
+        {cifra.cantor}
       </Link>
       <br />
       <br />
@@ -26,7 +26,7 @@ const CifraArea = () => {
       </p>
       <br />
 
-      <Cifra cifraELetra={cifra.song} />
+      <Cifra cifraELetra={cifra.cifra} />
     </div>
   );
 };
