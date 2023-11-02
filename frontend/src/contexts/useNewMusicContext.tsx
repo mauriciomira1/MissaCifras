@@ -9,15 +9,17 @@ import {
 } from "react";
 
 interface SongDataProps {
-  letra: string;
   id?: number;
   musica: string;
+  slug: string;
   versao: string;
-  cantor: string;
   compositor: string;
   tom: string;
   bpm: number;
   video: string;
+  letra: string;
+  cifra: string;
+  artistas: string[];
   hashtags: string;
   momentoDaMissa: string;
   qtdDeCliques?: number;

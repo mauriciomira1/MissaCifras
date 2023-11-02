@@ -13,7 +13,6 @@ datasource db {
 model ChordsList {
   id      String  @id @default(cuid())
   acorde  String
-  index   Int
   Cifra   Cifra?  @relation(fields: [cifraId], references: [id])
   cifraId String?
 }
@@ -31,13 +30,15 @@ model Artista {
 model Cifra {
   id               String         @id @default(cuid())
   musica           String
+  slug             String
   versao           String?
   compositor       String?
   tom              String
   bpm              Int?
   video            String?
   letra            String
-  cifra            ChordsList[]
+  cifra            String
+  acordes          ChordsList[]
   artistas         ArtistaCifra[]
   thumbnail        String?
   hashtags         String[]
@@ -46,26 +47,27 @@ model Cifra {
   qtdDeCliques     Int
   usuarioQueEnviou User           @relation(fields: [userId], references: [id])
   userId           String
+  Playlist         Playlist[]
   createdAt        DateTime       @default(now())
   updatedAt        DateTime       @default(now())
-  Playlist         Playlist[]
 }
 
 model ArtistaCifra {
   artista   Artista @relation(fields: [artistaId], references: [id])
   artistaId String
-
-  cifra   Cifra  @relation(fields: [cifraId], references: [id])
-  cifraId String
+  cifra     Cifra   @relation(fields: [cifraId], references: [id])
+  cifraId   String
 
   @@id([artistaId, cifraId])
 }
 
 model User {
-  id        String   @id @default(cuid())
+  id        String     @id @default(cuid())
   nome      String
-  cifra     Cifra[]
-  createdAt DateTime @default(now())
+  foto      String
+  createdAt DateTime   @default(now())
+  Cifra     Cifra[]
+  Playlist  Playlist[]
 }
 
 model Playlist {
@@ -73,6 +75,8 @@ model Playlist {
   nome      String
   cifras    Cifra    @relation(fields: [cifraId], references: [id])
   cifraId   String
+  criadoPor User     @relation(fields: [userId], references: [id])
+  userId    String
   createdAt DateTime @default(now())
   updatedAt DateTime @default(now())
 }

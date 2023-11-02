@@ -121,15 +121,9 @@ const Etapa03 = () => {
       <h1 className="font-text text-primaryColor py-1 font-bold">
         ETAPA 03 - CIFRA
       </h1>
-      <textarea
-        name=""
-        id=""
-        cols={30}
-        rows={18}
-        className="bg-gray-200 w-full rounded text-sm"
-        value={cifraDaMusica}
-        onChange={handleChange}
-      ></textarea>
+      <section className="whitespace-pre-wrap font-cifra my-4">
+        {buttons}
+      </section>
     </div>
   );
 };
