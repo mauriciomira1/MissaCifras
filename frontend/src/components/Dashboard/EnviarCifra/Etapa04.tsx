@@ -15,9 +15,6 @@ const Etapa04 = async () => {
       video: songData.video,
       letra: songData.letra,
       cifra: songData.chordsList,
-      video: songData.video,
-      video: songData.video,
-      video: songData.video,
     },
   });
 
