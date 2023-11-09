@@ -1,5 +1,6 @@
 # MissaCifras
 Um site de cifras católicas para músicos
+
 *Site em desenvolvimento*
 
 ## Interface de Usuário (criado no Figma)
@@ -35,4 +36,4 @@ npm run dev
 Como o site está em desenvolvimento, diversas funções ainda estão sendo desenvolvidas, logo não estão sendo executadas. O Readme está sendo atualizado de acordo com o avanço do projeto.
 
 ## Deploy na vercel: https://missa-cifras.vercel.app/
-#### Veja também a dashboard de envio de cifra que está em desenvolvimento atualmente: https://missa-cifras.vercel.app/dashboard
+#### Veja também a dashboard de envio de cifra que encontra-se em desenvolvimento: https://missa-cifras.vercel.app/dashboard
