@@ -32,3 +32,6 @@ npm run dev
 
 
 ### Deploy na vercel: https://missa-cifras.vercel.app/
+
+## Observações finais
+Como o site está em desenvolvimento, diversas funções ainda estão sendo desenvolvidas, logo não estão sendo executadas. O Readme está sendo atualizado de acordo com o avanço do projeto.
