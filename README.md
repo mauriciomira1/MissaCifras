@@ -28,7 +28,7 @@ npm run dev
 5) Prisma
 
 ## Screenshot da Home
-![](docs/images/home.npg)
+![](docs/images/home.png)
 
 
 ### Deploy na vercel: https://missa-cifras.vercel.app/
